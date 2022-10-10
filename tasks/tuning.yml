@@ -1,0 +1,3 @@
+- name: tune ssd drives
+  beome: true
+  shell: systemctl enable fstrim.timer

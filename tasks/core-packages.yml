@@ -1,0 +1,82 @@
+- name: install core packages
+  become: true
+  dnf:
+    name:
+      - cmake
+      - libtool
+      - libsecret
+      - neovim
+      - python3-neovim
+      - gh
+      - pip
+      - lsof
+      - webkit2gtk3-devel.x86_64
+      - openssl-devel
+      - curl
+      - wget
+      - libappindicator-gtk3
+      - librsvg2-devel
+  tags:
+    - install
+    - libraries
+- name: install Development and dependencies
+  become: true
+  dnf:
+    name: "@Development tools"
+  tags:
+    - install
+    - development
+- name: install clang tools and dependencies
+  become: true
+  dnf:
+    name: "@C Development Tools and Libraries"
+  tags:
+    - install
+    - development
+- name: install firmware update manager
+  become: true
+  dnf:
+    name: fwupd
+  tags:
+    - install
+    - firmware
+- name: install quality-of-life packages
+  become: true
+  dnf:
+    name:
+      - exa # modern ls replacement
+      - fzf # fuzzy finder
+      - fd-find # modern find replacement (works with fzf)
+      - ripgrep # much faster grep searching (works with fzf)
+      - bat # modern cat replacement with syntax highlighting
+      - tldr # minimal manual information
+      - tmux # terminal window management utility
+      - alacritty # GPU-based terminal editor
+  tags:
+    - install
+    - terminal
+- name: install helpful packages
+  become: true
+  dnf:
+    name:
+      - cronie # cron jobs
+      - ncdu # disk usage management utility
+      - htop # resource management utility
+      - wireshark # network monitoring utility
+      - bleachbit # system cleaning utility
+      - ulauncher # quick launch utility
+  tags:
+    - install
+    - gnome
+    - gui
+    - terminal
+- name: install gnome packages
+  become: true
+  dnf:
+    name:
+      - gnome-tweaks # improve stock gnome experience
+      - chrome-gnome-shell # gnome extensions chrome integration
+  tags:
+    - install
+    - gnome
+    - gui

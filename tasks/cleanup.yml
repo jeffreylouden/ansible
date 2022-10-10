@@ -1,0 +1,7 @@
+- name: autoremove unneeded dependencies
+  become: true
+  dnf:
+    autoremove: true
+- name: clean any leftover dnf files
+  become: true
+  shell: dnf clean all

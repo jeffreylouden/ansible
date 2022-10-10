@@ -1,0 +1,17 @@
+- name: make sure dnf is up to date
+  become: true
+  dnf:
+    update_cache: true
+- name: update all packages
+  become: true
+  dnf:
+    name: "*"
+    state: latest
+- name: autoremove unneeded dependencies
+  become: true
+  dnf:
+    autoremove: true
+- name: groupupdate core
+  become: true
+  # ansible builtin command not available
+  shell: dnf groupupdate core -y

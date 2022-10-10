@@ -1,0 +1,13 @@
+- name: configure flatpak
+  become: true
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+- name: update flatpak
+  become: true
+  shell: flatpak update
+- name: install core flatpak applications
+  community.general.flatpak:
+    name:
+      - brave
+      - spotify
+      - slack
+      - discord

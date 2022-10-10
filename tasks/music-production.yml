@@ -1,0 +1,14 @@
+- name: install bitwig studio
+  become: true
+  communit.general.flatpak:
+    name: bitwig
+- name: install m8 firmware transfer tool
+  become: true
+  dnf:
+    name: tycmd
+- name: install u-he MFM2 plugin
+  # https://dl.u-he.com/releases/MFM2_25_13385_Linux.tar.xz
+- name: install u-he Satin plugin
+  # https://dl.u-he.com/releases/Satin_132_12092_Linux.tar.xz
+- name: install u-he Presswerk plugin
+  # https://dl.u-he.com/releases/Presswerk_115_12092_Linux.tar.xz

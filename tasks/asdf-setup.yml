@@ -1,0 +1,32 @@
+- name: install asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.10.2
+  tags:
+    - install
+    - asdf
+- name: add node asdf plugin
+  become: true
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+  tags:
+    - install
+    - asdf
+    - node
+- name: add rust asdf plugin
+  become: true
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh plugin add rust https://github.com/asdf-community/asdf-rust.git"
+  tags:
+    - install
+    - asdf
+    - rust
+- name: install asdf packages
+  become: true
+  shell: asdf install
+  environment: # set explicit PATH override since dotfiles don't exist yet
+    PATH: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh:{{ ansible_env.PATH }}"
+  tags:
+    - install
+    - asdf
+    - node
+    - rust
