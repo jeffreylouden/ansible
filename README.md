@@ -4,6 +4,15 @@
 
 ## Scratch
 
+building docker images
+
+Note: the `bash` isn't required, but it drops into the
+container after building, which is usually very helpful.
+
+```sh
+docker build . -t local bash
+```
+
 Run local docker installation:
 
 ```sh
