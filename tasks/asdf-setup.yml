@@ -8,25 +8,29 @@
     - asdf
 - name: add node asdf plugin
   become: true
-  shell: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/bin/asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+  tags:
+    - install
+    - asdf
+    - node
+- name: install correct node version
+  become: true
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/bin/asdf install nodejs {{ node_version }}"
   tags:
     - install
     - asdf
     - node
 - name: add rust asdf plugin
   become: true
-  shell: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh plugin add rust https://github.com/asdf-community/asdf-rust.git"
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/bin/asdf plugin add rust https://github.com/asdf-community/asdf-rust.git"
   tags:
     - install
     - asdf
     - rust
-- name: install asdf packages
+- name: install correct rust version
   become: true
-  shell: asdf install
-  environment: # set explicit PATH override since dotfiles don't exist yet
-    PATH: "{{ lookup('env', 'HOME') }}/.asdf/asdf.sh:{{ ansible_env.PATH }}"
+  shell: "{{ lookup('env', 'HOME') }}/.asdf/bin/asdf install rust {{ rust_version }}"
   tags:
     - install
     - asdf
-    - node
     - rust
