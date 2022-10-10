@@ -2,6 +2,7 @@
   become: true
   dnf:
     name:
+      - ansible
       - cmake
       - libtool
       - libsecret
@@ -52,6 +53,7 @@
       - tldr # minimal manual information
       - tmux # terminal window management utility
       - alacritty # GPU-based terminal editor
+      - jq # modern json handling
   tags:
     - install
     - terminal
