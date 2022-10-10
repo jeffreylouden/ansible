@@ -2,6 +2,8 @@
   vars:
     source_key: "./.ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+    node_version: "16.17.1"
+    rust_version: "1.64.0"
   pre_tasks:
     - include_tasks: tasks/dnf-configuration.yml
   tasks:
