@@ -1,0 +1,24 @@
+- name: install moonlander dependencies
+  become: true
+  dnf:
+    name:
+      - gtk3
+      - webkit2gtk3
+      - libusb
+  tags:
+    - install
+    - moonlander
+- name: add plugdev group
+  become: true
+  command: groupadd plugdev
+- name: add current user to plugdev group
+  become: true
+  shell: "usermod -aG plugdev $USER"
+
+# # https://github.com/zsa/wally/wiki/Linux-install
+# sudo dnf install gtk3 webkit2gtk3 libusb
+# sudo groupadd plugdev
+# sudo usermod -aG plugdev "$USER"
+#
+# # Standard ZSA Moonlander layout
+# # https://configure.zsa.io/moonlander/layouts/default/latest/0
