@@ -2,9 +2,18 @@
   become: true
   dnf:
     name: flatpak
+- name: add fedora remote
+  become: true
+  command: "flatpak remote-add --if-not-exists --user fedora oci+https://registry.fedoraproject.org"
 - name: add flathub remote
   become: true
   command: "flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo"
+- name: repair flatpak installation
+  become: true
+  command: flatpak repair --user
+- name: update flatpak
+  become: true
+  command: flatpak update
 - name: install brave flatpak application
   become: true
   command: "flatpak install flathub com.brave.Browser --noninteractive"
