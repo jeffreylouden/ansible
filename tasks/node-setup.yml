@@ -12,28 +12,17 @@
   tags:
     - install
     - node
-# - name: add npmjs to path
-#   shell: PATH=~/.local/.npm-global/bin:$PATH
-#   tags:
-#     - install
-#     - node
 - name: npmjs global settings
   command: npm config set prefix '{{ ansible_user_dir }}/.local/.npm-global'
   tags:
     - install
     - node
-# - name: npmjs global settings export path in case I don't have dotfiles installed
-#   shell: export PATH=~/.local/.npm-global/bin:$PATH
-#   tags:
-#     - install
-#     - node
-#     - npm-path
 - name: Install N node manager
   npm:
     name: n
     global: true
   environment:
-    PATH: '{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}'
+    PATH: "{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
   tags:
     - install
     - node
@@ -41,7 +30,7 @@
   become: true
   command: n 16
   environment:
-    PATH: '{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}'
+    PATH: "{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
   tags:
     - install
     - node
