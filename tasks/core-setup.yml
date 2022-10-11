@@ -14,4 +14,4 @@
 - name: groupupdate core
   become: true
   # ansible builtin command not available
-  shell: dnf groupupdate core -y
+  command: dnf groupupdate core -y
