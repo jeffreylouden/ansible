@@ -20,3 +20,8 @@
 - name: install discord flatpak application
   become: true
   command: "flatpak install flathub com.discordapp.Discord --noninteractive"
+
+# TODO: (re)add Spotify and Slack flatpak installations
+# The underlying issue seems to be with a required freedesktop packages that is
+# no longer available. It's a infuriating ongoing issue, but it's worth trying
+# to figure out and install flatpaks due to their easier updating process.
