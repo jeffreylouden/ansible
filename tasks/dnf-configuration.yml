@@ -2,7 +2,7 @@
   become: true
   shell: |
     echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
-    echo 'max_parallel_downloads=1' sudo tee -a /etc/dnf/dnf.conf
+    echo 'max_parallel_downloads=1' | sudo tee -a /etc/dnf/dnf.conf
     echo 'deltarpm=1' | sudo tee -a /etc/dnf/dnf.conf
 - name: install free rpm fusion repository
   become: true
