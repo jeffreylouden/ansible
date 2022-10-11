@@ -1,0 +1,16 @@
+- name: install docker dependencies
+  become: true
+  dnf:
+    name:
+      - podman # handle containers (docker)
+      - podman-docker # allows podman to work with docker daemon
+      - docker-compose # allows connection to docker-compose
+- name: create docker usergroup
+  become: true
+  command: groupadd docker
+- name: add current user to docker group
+  become: true
+  shell: "usermod -aG docker $USER"
+- name: start podman socket on boot
+  become: true
+  command: systemctl enable podman.socket

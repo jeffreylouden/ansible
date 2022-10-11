@@ -54,7 +54,6 @@
       - tmux # terminal window management utility
       - alacritty # GPU-based terminal editor
       - jq # modern json handling
-      - podman # handle containers (docker)
   tags:
     - install
     - terminal
