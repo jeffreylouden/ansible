@@ -1,13 +1,13 @@
-- name: configure flatpak
+- name: install flatpak
   become: true
-  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-- name: update flatpak
+  dnf:
+    name: flatpak
+- name: add flathub remote
   become: true
-  shell: flatpak update
-- name: install core flatpak applications
-  community.general.flatpak:
-    name:
-      - brave
-      - spotify
-      - slack
-      - discord
+  command: "flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo"
+- name: install brave flatpak application
+  become: true
+  command: "flatpak install flathub com.brave.Browser --noninteractive"
+- name: install discord flatpak application
+  become: true
+  command: "flatpak install flathub com.discordapp.Discord --noninteractive"
