@@ -1,9 +1,7 @@
 - hosts: localhost
   vars:
     source_key: "./.ssh/id_rsa"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
-    node_version: "16.17.1"
-    rust_version: "1.64.0"
+    dest_key: "{{ ansible_user_dir }}/.ssh/id_rsa"
   pre_tasks:
     - include_tasks: tasks/dnf-configuration.yml
   tasks:
@@ -11,6 +9,13 @@
     - include_tasks: tasks/git-setup.yml
     - include_tasks: tasks/core-setup.yml
     - include_tasks: tasks/core-packages.yml
-    - include_tasks: tasks/asdf-setup.yml
+    - include_tasks: tasks/node-setup.yml
+    - include_tasks: tasks/npm-packages.yml
+    - include_tasks: tasks/rust-setup.yml
+    - include_tasks: tasks/flatpak.yml
+    - include_tasks: tasks/neovim.yml
+    - include_tasks: tasks/music-production.yml
+    - include_tasks: tasks/moonlander.yml
     - include_tasks: tasks/zsh-setup.yml
+    - include_tasks: tasks/tuning.yml
     - include_tasks: tasks/cleanup.yml
