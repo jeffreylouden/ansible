@@ -1,7 +1,0 @@
-- name: install podman
-  dnf:
-    name: podman
-  tags:
-    - install
-    - podman
-    - docker
