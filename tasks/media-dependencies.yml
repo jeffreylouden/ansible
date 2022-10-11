@@ -1,5 +1,0 @@
-- name: install media dependencies
-  become: true
-  dnf:
-    name:
-      - ffmpeg-libs
