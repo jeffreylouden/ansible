@@ -1,6 +1,7 @@
 ## References
 
 - [ThePrimeagen ansible configuration](https://github.com/ThePrimeagen/ansible)
+- [LearnLinuxTV personal ansible](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
 
 ## Scratch
 
