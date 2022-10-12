@@ -10,7 +10,9 @@
   tasks:
     - include_tasks: tasks/ssh.yml
     - include_tasks: tasks/core-setup.yml
+      when: ansible_distribution in ["Fedora"]
     - include_tasks: tasks/core-packages.yml
+      when: ansible_distribution in ["Fedora"]
     - include_tasks: tasks/node-setup.yml
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/rust-setup.yml
@@ -25,3 +27,4 @@
     - include_tasks: tasks/music-production.yml
     - include_tasks: tasks/tuning.yml
     - include_tasks: tasks/cleanup.yml
+      when: ansible_distribution in ["Fedora"]
