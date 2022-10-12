@@ -34,13 +34,6 @@
   tags:
     - install
     - development
-- name: install firmware update manager
-  become: true
-  dnf:
-    name: fwupd
-  tags:
-    - install
-    - firmware
 - name: install quality-of-life packages
   become: true
   dnf:

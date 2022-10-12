@@ -1,0 +1,5 @@
+- name: install firmware update manager
+  become: true
+  dnf:
+    name: fwupd
+  tags: install,firmware
