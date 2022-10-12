@@ -1,5 +1,4 @@
 - name: ensure .ssh directory exists
-  become: true
   file:
     dest: "{{ dest_key | dirname }}"
     mode: 0700
@@ -9,32 +8,38 @@
     - install
     - ssh
 - name: install private ssh key
-  become: true
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
-    remote_src: true # https://github.com/ansible/ansible/issues/2303
+    decrypt: true
+  # no_log: true
   tags:
     - dotfiles
     - install
     - ssh
 - name: install ssh key public
-  become: true
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
     mode: 0644
-    remote_src: true # https://github.com/ansible/ansible/issues/2303
+  no_log: true
   tags:
     - dotfiles
     - install
     - ssh
 - name: set authorized key took from file
-  become: true
   authorized_key:
     user: jeffreylouden
     state: present
-    key: "{{ ansible_user_dir }}/.ssh/id_rsa.pub"
+    key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
   with_fileglob:
-    - "{{ ansible_user_dir }}/.ssh/*.pub"
+    - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
+  no_log: true
+- name: ensure github.com is a known host
+  lineinfile:
+    dest: "{{ lookup('env', 'HOME') }}/.ssh/known_hosts"
+    create: true
+    state: present
+    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+    regexp: "^github\\.com"
