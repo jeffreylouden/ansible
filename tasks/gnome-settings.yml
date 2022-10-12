@@ -1,0 +1,121 @@
+## Gnome appearance
+- name: gnome | appearance | copy wallpaper file
+  tags: gnome,gnome-wallpaper
+  copy:
+    src: "{{ ansible_playbook_dir }}/files/wallpapers/wallpaper.jpg"
+    dest: /usr/share/backgrounds/wallpaper.jpg
+    mode: 0644
+- name: gnome | appearance | set wallpaper
+  tags: gnome,gnome-wallpaper
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/wallpaper.jpg'"
+- name: gnome | appearance | set wallpaper position
+  tags: gnome,gnome-wallpaper
+  dconf:
+    key: "/org/gnome/desktop/background/picture-options"
+    value: "'fill'"
+## Gnome keybindings
+- name: gnome | keybindings | set terminal keybinding
+  tags: gnome,keybindings
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name", value: "'terminal'"}
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding", value: "'<Super>t'"}
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command", value: "'{{ terminal_emulator }}'"}
+  when: terminal_emulator is defined
+- name: gnome | keybindings | set tmux keybinding
+  tags: gnome,keybindings
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/name", value: "'tmux'"}
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/binding", value: "'<Shift><Super>t'"}
+    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/command", value: "'{{ terminal_emulator }} -e tmux'"}
+  when: terminal_emulator is defined
+  # peripherals
+- name: gnome | peripherals | enable natural scrolling (mouse)
+  tags: gnome,mouse,peripherals
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/natural-scroll"
+    value: "true"
+- name: gnome | peripherals | enable cursor acceleration (mouse)
+  tags: gnome,mouse,peripherals
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
+    value: "'adaptive'"
+- name: gnome | peripherals | increase cursor speed (mouse)
+  tags: gnome,mouse,peripherals
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/speed"
+    value: "0.59999999999999998"
+- name: gnome | peripherals | increase cursor speed (touchpad)
+  tags: gnome,mouse,peripherals
+  dconf:
+    key: "/org/gnome/desktop/peripherals/touchpad/speed"
+    value: "0.59999999999999998"
+- name: gnome | peripherals | set manual night-light schedule
+  tags: gnome,peripherals,night-light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic"
+    value: "false"
+- name: gnome | peripherals | set manual night-light schedule start time
+  tags: gnome,peripherals,night-light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-from"
+    value: "23.0"
+- name: gnome | peripherals | set manual night-light schedule stop time
+  tags: gnome,peripherals,night-light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-to"
+    value: "7.4999999999999982"
+- name: gnome | peripherals | enable night-light
+  tags: gnome,peripherals,night-light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+- name: gnome | peripherals | set power button behavior
+  tags: gnome,peripherals,power
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/power-button-action"
+    value: "'suspend'"
+- name: gnome | peripherals | enable automatic suspend while plugged in to ac
+  tags: gnome,peripherals,power
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type"
+    value: "'suspend'"
+- name: gnome | peripherals | set timeout for automatic suspend while plugged in to ac
+  tags: gnome,peripherals,power
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout"
+    value: "2700"
+- name: gnome | peripherals | enable automatic suspend while on battery
+  tags: gnome,peripherals,power
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type"
+    value: "'suspend'"
+- name: gnome | peripherals | set timeout for automatic suspend while plugged in to ac
+  tags: gnome,peripherals,power
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout"
+    value: "1500"
+  #- name: gnome | appearance | set shell theme
+  #  become_user: jay
+  #  dconf:
+  #    key: "/org/gnome/shell/extensions/user-theme/name"
+  #    value: "'Shades-of-gray'"
+  #
+  #
+  #- name: gnome | appearance | gnome | appearance | set icon theme
+  #  become_user: jay
+  #  dconf:
+  #    key: "/org/gnome/desktop/interface/icon-theme"
+  #    value: "'Moka-Minimal'"
+  #- name: gnome | appearance | set GTK theme
+  #  become_user: jay
+  #  dconf:
+  #    key: "/org/gnome/desktop/interface/gtk-theme"
+  #    value: "'Shades-of-gray'"

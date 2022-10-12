@@ -3,6 +3,7 @@
   vars:
     source_key: "{{ playbook_dir }}/files/ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+    terminal_emulator: "alacritty"
   pre_tasks:
     - include_tasks: tasks/dnf-configuration.yml
       when: ansible_distribution in ["Fedora"]
