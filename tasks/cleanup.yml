@@ -1,7 +1,7 @@
-- name: autoremove unneeded dependencies
+- name: system | cleanup | autoremove unneeded dependencies
   become: true
   dnf:
     autoremove: true
-- name: clean any leftover dnf files
+- name: system | cleanup | clean leftover dnf files
   become: true
   shell: dnf clean all
