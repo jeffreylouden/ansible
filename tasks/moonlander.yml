@@ -5,9 +5,7 @@
       - gtk3
       - webkit2gtk3
       - libusb
-  tags:
-    - install
-    - moonlander
+  tags: install,moonlander
 - name: add plugdev group
   become: true
   command: groupadd plugdev

@@ -3,29 +3,20 @@
     dest: "{{ dest_key | dirname }}"
     mode: 0700
     state: directory
-  tags:
-    - dotfiles
-    - install
-    - ssh
+  tags: dotfiles,install,ssh
 - name: install private ssh key
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
     decrypt: true
-  tags:
-    - dotfiles
-    - install
-    - ssh
+  tags: dotfiles,install,ssh
 - name: install ssh key public
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
     mode: 0644
-  tags:
-    - dotfiles
-    - install
-    - ssh
+  tags: dotfiles,install,ssh
 - name: set authorized key took from file
   authorized_key:
     user: jeffreylouden

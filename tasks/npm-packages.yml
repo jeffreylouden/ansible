@@ -2,48 +2,34 @@
   npm:
     name: yarn
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install eslint
   npm:
     name: eslint
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install Typescript server
   npm:
     name: typescript-language-server
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install Typescript
   npm:
     name: typescript
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install TS-Node
   npm:
     name: ts-node
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install prettierd
   npm:
     name: "@fsouza/prettierd"
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: install markdownlint
   npm:
     name: markdownlint-cli
     global: true
-  tags:
-    - install
-    - node
+  tags: install,node

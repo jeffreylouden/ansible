@@ -4,33 +4,23 @@
     name:
       - "nodejs"
       - "npm"
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: npmjs prefix
   command: mkdir -p "{{ lookup('env', 'HOME') }}/.local/.npm-global"
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: npmjs global settings
   command: npm config set prefix "{{ lookup('env', 'HOME') }}/.local/.npm-global"
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: Install N node manager
   npm:
     name: n
     global: true
   environment:
     PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
-  tags:
-    - install
-    - node
+  tags: install,node
 - name: Install correct version of Node
   become: true
   command: n 16
   environment:
     PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
-  tags:
-    - install
-    - node
+  tags: install,node

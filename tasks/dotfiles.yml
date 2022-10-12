@@ -2,10 +2,7 @@
   become: true
   dnf:
     name: stow
-  tags:
-    - install
-    - dotfiles
-    - stow
+  tags: install,dotfiles,stow
 - name: Cloning .dotfiles
   git:
     repo: "git@github.com:jeffreylouden/.dotfiles.git"
@@ -14,13 +11,7 @@
     update: true
     accept_hostkey: true
     version: main
-  tags:
-    - install
-    - dotfiles
-    - stow
+  tags: install,dotfiles,stow
 - name: Stow dotfiles
   shell: "cd {{ lookup('env', 'HOME') }}/.dotfiles && ./install.sh"
-  tags:
-    - install
-    - dotfiles
-    - stow
+  tags: install,dotfiles,stow
