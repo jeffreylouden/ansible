@@ -14,7 +14,7 @@
     - include_tasks: tasks/rust-setup.yml
     - include_tasks: tasks/flatpak.yml
     - include_tasks: tasks/docker-setup.yml
-    - include_tasks: tasks/neovim.yml
+    # - include_tasks: tasks/nvim-setup.yml
     - include_tasks: tasks/music-production.yml
     - include_tasks: tasks/moonlander.yml
     - include_tasks: tasks/zsh-setup.yml
