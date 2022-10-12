@@ -1,0 +1,7 @@
+- name: neovim | install | install neovim
+  become: true
+  dnf:
+    name:
+      - neovim
+      - python3-neovim
+  tags: install,libraries

@@ -6,8 +6,6 @@
       - cmake
       - libtool
       - libsecret
-      - neovim
-      - python3-neovim
       - gh
       - pip
       - lsof
