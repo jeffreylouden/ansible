@@ -1,3 +1,5 @@
+# Dockerfile used for testing configuration on a clean environment.
+
 FROM fedora:36 AS base
 WORKDIR /usr/local/bin
 RUN dnf update -y && \
@@ -16,4 +18,4 @@ WORKDIR /home/jeffreylouden
 
 FROM local
 COPY . .
-CMD ["sh", "-c", "ansible-playbook $TAGS local.yml -K"]
+CMD ["sh", "-c", "ansible-playbook $TAGS local.yml --ask-become-pass --ask-vault-pass"]
