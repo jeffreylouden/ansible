@@ -1,7 +1,7 @@
 - hosts: localhost
   vars:
     source_key: "{{ playbook_dir }}/.ssh/id_rsa"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh-test/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   pre_tasks:
     - include_tasks: tasks/dnf-configuration.yml
   tasks:
