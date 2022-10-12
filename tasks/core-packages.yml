@@ -2,36 +2,27 @@
   become: true
   dnf:
     name:
-      - ansible
       - cmake
       - libtool
       - libsecret
-      - gh
       - pip
-      - lsof
       - webkit2gtk3-devel.x86_64
       - openssl-devel
       - curl
       - wget
       - libappindicator-gtk3
       - librsvg2-devel
-  tags:
-    - install
-    - libraries
+  tags: install,libraries
 - name: install Development and dependencies
   become: true
   dnf:
     name: "@Development tools"
-  tags:
-    - install
-    - development
+  tags: install,development
 - name: install clang tools and dependencies
   become: true
   dnf:
     name: "@C Development Tools and Libraries"
-  tags:
-    - install
-    - development
+  tags: install,development
 - name: install quality-of-life packages
   become: true
   dnf:
@@ -45,9 +36,9 @@
       - tmux # terminal window management utility
       - alacritty # GPU-based terminal editor
       - jq # modern json handling
-  tags:
-    - install
-    - terminal
+      - gh # github cli
+      - lsof
+  tags: install,terminal
 - name: install helpful packages
   become: true
   dnf:
@@ -58,18 +49,4 @@
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - ulauncher # quick launch utility
-  tags:
-    - install
-    - gnome
-    - gui
-    - terminal
-- name: install gnome packages
-  become: true
-  dnf:
-    name:
-      - gnome-tweaks # improve stock gnome experience
-      - chrome-gnome-shell # gnome extensions chrome integration
-  tags:
-    - install
-    - gnome
-    - gui
+  tags: install,gui,terminal
