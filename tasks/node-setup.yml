@@ -8,12 +8,12 @@
     - install
     - node
 - name: npmjs prefix
-  command: mkdir -p "{{ ansible_user_dir }}/.local/.npm-global"
+  command: mkdir -p "{{ lookup('env', 'HOME') }}/.local/.npm-global"
   tags:
     - install
     - node
 - name: npmjs global settings
-  command: npm config set prefix '{{ ansible_user_dir }}/.local/.npm-global'
+  command: npm config set prefix "{{ lookup('env', 'HOME') }}/.local/.npm-global"
   tags:
     - install
     - node
@@ -22,7 +22,7 @@
     name: n
     global: true
   environment:
-    PATH: "{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ lookup('env', 'PATH') }}"
   tags:
     - install
     - node
@@ -30,7 +30,7 @@
   become: true
   command: n 16
   environment:
-    PATH: "{{ ansible_user_dir }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ lookup('env', 'PATH') }}"
   tags:
     - install
     - node

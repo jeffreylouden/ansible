@@ -13,7 +13,7 @@
   command: groupadd plugdev
 - name: add current user to plugdev group
   become: true
-  shell: "usermod -aG plugdev $USER"
+  shell: "usermod -aG plugdev {{ lookup('env', 'USER') }}"
 
 # # https://github.com/zsa/wally/wiki/Linux-install
 # sudo dnf install gtk3 webkit2gtk3 libusb

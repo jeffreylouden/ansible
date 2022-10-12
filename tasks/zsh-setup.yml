@@ -23,7 +23,7 @@
 - name: install zsh-autosuggestions
   git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
-    dest: "{{ ansible_user_dir }}/.oh-my-zsh/plugins/zsh-autosuggestions"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
 - name: create .zsh directory
   command: 'mkdir -p "{{ ansible_user_dir }}/.zsh"'
@@ -31,5 +31,5 @@
 - name: install pure prompt
   git:
     repo: "https://github.com/sindresorhus/pure.git"
-    dest: "{{ ansible_user_dir }}/.zsh/pure"
-    tags: *tags_for_zsh_tasks
+    dest: "{{ lookup('env', 'HOME') }}/.zsh/pure"
+  tags: *tags_for_zsh_tasks
