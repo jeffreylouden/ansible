@@ -22,7 +22,7 @@
     name: n
     global: true
   environment:
-    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:$PATH"
+    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
   tags:
     - install
     - node
@@ -30,7 +30,7 @@
   become: true
   command: n 16
   environment:
-    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:$PATH"
+    PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
   tags:
     - install
     - node
