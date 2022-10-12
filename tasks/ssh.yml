@@ -8,34 +8,34 @@
     - install
     - ssh
 - name: install private ssh key
+  no_log: true
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
     decrypt: true
-  # no_log: true
   tags:
     - dotfiles
     - install
     - ssh
 - name: install ssh key public
+  no_log: true
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
     mode: 0644
-  no_log: true
   tags:
     - dotfiles
     - install
     - ssh
 - name: set authorized key took from file
+  no_log: true
   authorized_key:
     user: jeffreylouden
     state: present
-    key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   with_fileglob:
     - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
-  no_log: true
 - name: ensure github.com is a known host
   lineinfile:
     dest: "{{ lookup('env', 'HOME') }}/.ssh/known_hosts"
