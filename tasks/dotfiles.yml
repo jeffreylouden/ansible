@@ -19,7 +19,7 @@
     - dotfiles
     - stow
 - name: Stow dotfiles
-  command: "{{ lookup('env', 'HOME') }}/.dotfiles"
+  shell: "cd {{ lookup('env', 'HOME') }}/.dotfiles && ./install.sh"
   tags:
     - install
     - dotfiles
