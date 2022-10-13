@@ -13,5 +13,7 @@
     version: main
   tags: install,dotfiles,stow
 - name: Stow dotfiles
-  shell: "cd {{ lookup('env', 'HOME') }}/.dotfiles && ./install.sh"
+  shell: |
+    "cd {{ lookup('env', 'HOME') }}/.dotfiles"
+    "./install.sh"
   tags: install,dotfiles,stow
