@@ -3,7 +3,6 @@
   dnf:
     name:
       - cmake
-      - libtool
       - libsecret
       - pip
       - webkit2gtk3-devel.x86_64
