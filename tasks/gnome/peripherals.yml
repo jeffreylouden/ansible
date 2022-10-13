@@ -27,12 +27,12 @@
   tags: gnome,peripherals,night-light
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-from"
-    value: "23.0"
+    value: "22.0"
 - name: gnome | peripherals | set manual night-light schedule stop time
   tags: gnome,peripherals,night-light
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-to"
-    value: "7.4999999999999982"
+    value: "7.0"
 - name: gnome | peripherals | enable night-light
   tags: gnome,peripherals,night-light
   dconf:
@@ -58,7 +58,7 @@
   dconf:
     key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type"
     value: "'suspend'"
-- name: gnome | peripherals | set timeout for automatic suspend while plugged in to ac
+- name: gnome | peripherals | set timeout for automatic suspend while on battery
   tags: gnome,peripherals,power
   dconf:
     key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout"
