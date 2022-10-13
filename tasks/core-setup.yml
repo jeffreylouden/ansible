@@ -7,10 +7,6 @@
   dnf:
     name: "*"
     state: latest
-- name: autoremove unneeded dependencies
-  become: true
-  dnf:
-    autoremove: true
 - name: groupupdate core
   become: true
   # ansible builtin command not available
