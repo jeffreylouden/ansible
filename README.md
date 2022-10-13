@@ -27,3 +27,14 @@ command to install everything
 ```sh
 ansible-playbook local.yml -K
 ```
+
+## TODO
+
+- [ ] clean up tags into csv list 
+- [ ] rename tasks with "area | task | detail" schema
+- [ ] add more catches for "Fedora" distribution (in case I want to experiment on
+      other distros and still use ansible)
+- [ ] how can I automatically install:
+  - [ ] chrome extensions?
+  - [ ] gnome extensions?
+- [ ] add better checks if directories exist
