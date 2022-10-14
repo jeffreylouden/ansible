@@ -23,6 +23,9 @@
     name: '@C Development Tools and Libraries'
   tags: install,development
 - name: install quality-of-life packages
+- name: core packages | install | python dependencies
+  become: true
+  command: pip install psutil --no-input --quiet
   become: true
   dnf:
     name:
