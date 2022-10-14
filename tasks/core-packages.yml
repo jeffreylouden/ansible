@@ -1,4 +1,4 @@
-- name: install core packages
+- name: core packages | install
   become: true
   dnf:
     name:
@@ -12,20 +12,20 @@
       - libappindicator-gtk3
       - librsvg2-devel
   tags: install,libraries
-- name: install Development and dependencies
+- name: corepackages | install | development tools
   become: true
   dnf:
     name: '@Development tools'
   tags: install,development
-- name: install clang tools and dependencies
+- name: core packages | install | clang development tools
   become: true
   dnf:
     name: '@C Development Tools and Libraries'
   tags: install,development
-- name: install quality-of-life packages
 - name: core packages | install | python dependencies
   become: true
   command: pip install psutil --no-input --quiet
+- name: core packages | install | essential user packages
   become: true
   dnf:
     name:
@@ -40,15 +40,10 @@
       - jq # modern json handling
       - gh # github cli
       - lsof
-  tags: install,terminal
-- name: install helpful packages
-  become: true
-  dnf:
-    name:
       - cronie # cron jobs
       - ncdu # disk usage management utility
       - htop # resource management utility
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - ulauncher # quick launch utility
-  tags: install,gui,terminal
+  tags: install,terminal
