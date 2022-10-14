@@ -17,10 +17,10 @@
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/rust-setup.yml
     - include_tasks: tasks/docker-setup.yml
-    # - include_tasks: tasks/nvim-setup.yml
+    - include_tasks: tasks/nvim-setup.yml
     - include_tasks: tasks/zsh-setup.yml
     - include_tasks: tasks/flatpak.yml
-    # - include_tasks: tasks/fonts.yml
+    - include_tasks: tasks/fonts.yml
     - include_tasks: tasks/gnome/appearance.yml
     - include_tasks: tasks/gnome/keybindings.yml
     - include_tasks: tasks/gnome/peripherals.yml
