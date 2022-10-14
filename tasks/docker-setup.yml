@@ -1,16 +1,20 @@
+- name: docker | install | add repo configuration
+  become: true
+  command: 'dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo'
 - name: install docker dependencies
   become: true
   dnf:
     name:
-      - podman # handle containers (docker)
-      - podman-docker # allows podman to work with docker daemon
-      - docker-compose # allows connection to docker-compose
-- name: create docker usergroup
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose-plugin
+- name: start docker service on boot
   become: true
-  command: groupadd docker
+  command: systemctl enable docker.service
+- name: start containerd service on boot
+  become: true
+  command: systemctl enable containerd.service
 - name: add current user to docker group
   become: true
   shell: 'usermod -aG docker $USER'
-- name: start podman socket on boot
-  become: true
-  command: systemctl enable podman.socket
