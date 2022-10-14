@@ -1,13 +1,13 @@
-- name: make sure dnf is up to date
+- name: core | dnf | update cache
   become: true
   dnf:
     update_cache: true
-- name: update all packages
+- name: core | dnf | upgrade all packages
   become: true
   dnf:
     name: '*'
     state: latest
-- name: groupupdate core
+- name: core | dnf | groupupdate core packages
   become: true
   # ansible builtin command not available
   command: dnf groupupdate core -y

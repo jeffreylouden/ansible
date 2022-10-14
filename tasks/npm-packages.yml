@@ -1,34 +1,34 @@
-- name: install Yarn
+- name: npm | install | yarn
   npm:
     name: yarn
     global: true
   tags: install,node
-- name: install eslint
+- name: npm | install | eslint
   npm:
     name: eslint
     global: true
   tags: install,node
-- name: install Typescript server
+- name: npm | install | typescript language server
   npm:
     name: typescript-language-server
     global: true
   tags: install,node
-- name: install Typescript
+- name: npm | install | typescript
   npm:
     name: typescript
     global: true
   tags: install,node
-- name: install TS-Node
+- name: npm | install | ts-node
   npm:
     name: ts-node
     global: true
   tags: install,node
-- name: install prettierd
+- name: npm | install | prettierd
   npm:
     name: '@fsouza/prettierd'
     global: true
   tags: install,node
-- name: install markdownlint
+- name: npm | install | markdownlint
   npm:
     name: markdownlint-cli
     global: true

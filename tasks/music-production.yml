@@ -1,25 +1,25 @@
-- name: install media dependencies
+- name: music production | install | media dependencies
   become: true
   dnf:
     name:
       - ffmpeg # required media libraries for bitwig
       - xz # utility to untar u-he plugins
-- name: install bitwig flatpak application
+- name: music production | DAW | bitwig studio (flatpak)
   become: true
   command: 'flatpak install flathub com.bitwig.BitwigStudio --noninteractive'
-- name: install m8 firmware transfer tool
+- name: music production | install | tycmd (m8 firmware transfer tool)
   become: true
   dnf:
     name: tycmd
-- name: download u-he MFM2 plugin
+- name: music production | plugin | download u-he MFM2 plugin
   shell: 'curl -L https://dl.u-he.com/releases/MFM2_25_13385_Linux.tar.xz | tar -xJ'
-- name: install u-he MFM2 plugin
+- name: music production | plugin | install u-he MFM2 plugin
   command: './MFM2-13385/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
-- name: download u-he Satin plugin
+- name: music production | plugin | download u-he Satin plugin
   shell: 'curl -L https://dl.u-he.com/releases/Satin_132_12092_Linux.tar.xz | tar -xJ'
-- name: install u-he Satin plugin
+- name: music production | plugin | install u-he Satin plugin
   command: './MFM2-13385/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
-- name: download u-he Presswerk plugin
+- name: music production | plugin | download u-he Presswerk plugin
   shell: 'curl -L  https://dl.u-he.com/releases/Presswerk_115_12092_Linux.tar.xz | tar -xJ'
-- name: install u-he Presswerk plugin
+- name: music production | plugin | install u-he Presswerk plugin
   command: './MFM2-13385/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?

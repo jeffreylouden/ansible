@@ -1,11 +1,11 @@
-- name: neovim | install | install neovim
+- name: neovim | install | dnf package
   become: true
   dnf:
     name:
       - neovim
       - python3-neovim
   tags: install,libraries,neovim
-- name: install neovim
+- name: neovim | install | npm package
   npm:
     name: neovim
     global: true

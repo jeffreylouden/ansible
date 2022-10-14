@@ -1,15 +1,15 @@
-- name: improve standard dnf configuration
+- name: dnf | config | faster parallel downloads
   become: true
   shell: |
     echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
     echo 'max_parallel_downloads=1' | sudo tee -a /etc/dnf/dnf.conf
     echo 'deltarpm=1' | sudo tee -a /etc/dnf/dnf.conf
-- name: install free rpm fusion repository
+- name: dnf | config | add free rpm fusion repository
   become: true
   dnf:
     name: https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
     disable_gpg_check: true
-- name: install non-free rpm fusion repository
+- name: dnf | config | add  non-free rpm fusion repository
   become: true
   dnf:
     name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm

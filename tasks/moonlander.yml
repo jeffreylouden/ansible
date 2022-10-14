@@ -1,4 +1,4 @@
-- name: install moonlander dependencies
+- name: moonlander | install | development dependencies
   become: true
   dnf:
     name:
@@ -6,10 +6,10 @@
       - webkit2gtk3
       - libusb
   tags: install,moonlander
-- name: add plugdev group
+- name: moonlander | config | add plugdev group
   become: true
   command: groupadd plugdev
-- name: add current user to plugdev group
+- name: moonlander | config | add current user to plugdev group
   become: true
   shell: 'usermod -aG plugdev $USER'
 # # https://github.com/zsa/wally/wiki/Linux-install

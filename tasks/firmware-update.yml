@@ -1,4 +1,4 @@
-- name: install firmware update manager
+- name: firmware | install | firmware update manager
   become: true
   dnf:
     name: fwupd

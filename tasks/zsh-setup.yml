@@ -1,18 +1,18 @@
-- name: install ZSH
+- name: zsh | install | zsh dnf package
   tags: install,productivity,dotfiles,zsh
   become: true
   dnf:
     name: zsh
-- name: change shell to zsh
+- name: zsh | config | change shell to zsh
   tags: install,productivity,dotfiles,zsh
   become: true
   shell: usermod -s $(which zsh) jeffreylouden
-- name: check if .oh-my-zsh exists
+- name: zsh | config | check if .oh-my-zsh exists
   tags: install,productivity,dotfiles,zsh
   stat:
     path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
   register: oh_my_stats
-- name: oh-my-zsh
+- name: zsh | install | oh-my-zsh
   tags: install,productivity,dotfiles,zsh
   shell: |
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer
@@ -20,16 +20,16 @@
     ~/.oh-my-installer
   when: oh_my_stats.stat.exists == false
   become_user: jeffreylouden
-- name: install zsh-autosuggestions
+- name: zsh | install | zsh-autosuggestions
   tags: install,productivity,dotfiles,zsh
   git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/plugins/zsh-autosuggestions"
-- name: create .zsh directory
+- name: zsh | config | create .zsh directory
   tags: install,productivity,dotfiles,zsh
   command: "mkdir -p {{ lookup('env', 'HOME') }}/.zsh"
   ignore_errors: true
-- name: install pure prompt
+- name: zsh | install | pure prompt
   tags: install,productivity,dotfiles,zsh
   git:
     repo: 'https://github.com/sindresorhus/pure.git'
