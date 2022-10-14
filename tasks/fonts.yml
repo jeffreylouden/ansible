@@ -3,3 +3,4 @@
     src: '{{ playbook_dir }}/files/fonts/DankMono-Regular.otf'
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/DankMono-Regular.otf"
     mode: 0644
+    decrypt: true
