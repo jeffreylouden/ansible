@@ -25,7 +25,7 @@
   tags: install,node
 - name: install prettierd
   npm:
-    name: "@fsouza/prettierd"
+    name: '@fsouza/prettierd'
     global: true
   tags: install,node
 - name: install markdownlint

@@ -23,7 +23,7 @@
 - name: install zsh-autosuggestions
   tags: install,productivity,dotfiles,zsh
   git:
-    repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/plugins/zsh-autosuggestions"
 - name: create .zsh directory
   tags: install,productivity,dotfiles,zsh
@@ -32,5 +32,5 @@
 - name: install pure prompt
   tags: install,productivity,dotfiles,zsh
   git:
-    repo: "https://github.com/sindresorhus/pure.git"
+    repo: 'https://github.com/sindresorhus/pure.git'
     dest: "{{ lookup('env', 'HOME') }}/.zsh/pure"

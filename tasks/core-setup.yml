@@ -5,7 +5,7 @@
 - name: update all packages
   become: true
   dnf:
-    name: "*"
+    name: '*'
     state: latest
 - name: groupupdate core
   become: true

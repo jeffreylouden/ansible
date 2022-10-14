@@ -15,12 +15,12 @@
 - name: install Development and dependencies
   become: true
   dnf:
-    name: "@Development tools"
+    name: '@Development tools'
   tags: install,development
 - name: install clang tools and dependencies
   become: true
   dnf:
-    name: "@C Development Tools and Libraries"
+    name: '@C Development Tools and Libraries'
   tags: install,development
 - name: install quality-of-life packages
   become: true

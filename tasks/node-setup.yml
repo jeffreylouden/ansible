@@ -2,8 +2,8 @@
   become: true
   dnf:
     name:
-      - "nodejs"
-      - "npm"
+      - 'nodejs'
+      - 'npm'
   tags: install,node
 - name: npmjs prefix
   command: mkdir -p "{{ lookup('env', 'HOME') }}/.local/.npm-global"

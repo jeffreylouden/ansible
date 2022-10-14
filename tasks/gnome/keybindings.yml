@@ -1,20 +1,38 @@
 - name: gnome | keybindings | set terminal keybinding
   tags: gnome,keybindings
   dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    key: '{{ item.key }}'
+    value: '{{ item.value}}'
   with_items:
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name", value: "'terminal'"}
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding", value: "'<Super>t'"}
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command", value: "'{{ terminal_emulator }}'"}
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name',
+        value: "'terminal'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding',
+        value: "'<Super>t'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command',
+        value: "'{{ terminal_emulator }}'",
+      }
   when: terminal_emulator is defined
 - name: gnome | keybindings | set tmux keybinding
   tags: gnome,keybindings
   dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    key: '{{ item.key }}'
+    value: '{{ item.value}}'
   with_items:
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/name", value: "'tmux'"}
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/binding", value: "'<Shift><Super>t'"}
-    - {key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/command", value: "'{{ terminal_emulator }} -e tmux'"}
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/name',
+        value: "'tmux'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/binding',
+        value: "'<Shift><Super>t'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/command',
+        value: "'{{ terminal_emulator }} -e tmux'",
+      }
   when: terminal_emulator is defined

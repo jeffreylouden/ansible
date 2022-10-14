@@ -4,4 +4,9 @@
     name:
       - neovim
       - python3-neovim
-  tags: install,libraries
+  tags: install,libraries,neovim
+- name: install neovim
+  npm:
+    name: neovim
+    global: true
+  tags: install,node,neovim

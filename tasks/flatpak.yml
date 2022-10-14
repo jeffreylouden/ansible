@@ -4,10 +4,10 @@
     name: flatpak
 - name: add fedora remote
   become: true
-  command: "flatpak remote-add --if-not-exists --user fedora oci+https://registry.fedoraproject.org"
+  command: 'flatpak remote-add --if-not-exists --user fedora oci+https://registry.fedoraproject.org'
 - name: add flathub remote
   become: true
-  command: "flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo"
+  command: 'flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo'
 - name: repair flatpak installation
   become: true
   command: flatpak repair --user
@@ -16,11 +16,10 @@
   command: flatpak update
 - name: install brave flatpak application
   become: true
-  command: "flatpak install flathub com.brave.Browser --noninteractive"
+  command: 'flatpak install flathub com.brave.Browser --noninteractive'
 - name: install discord flatpak application
   become: true
-  command: "flatpak install flathub com.discordapp.Discord --noninteractive"
-
+  command: 'flatpak install flathub com.discordapp.Discord --noninteractive'
 # TODO: (re)add Spotify and Slack flatpak installations
 # The underlying issue seems to be with a required freedesktop packages that is
 # no longer available. It's a infuriating ongoing issue, but it's worth trying
