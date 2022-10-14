@@ -11,6 +11,7 @@
       - wget
       - libappindicator-gtk3
       - librsvg2-devel
+      - dconf
   tags: install,libraries
 - name: corepackages | install | development tools
   become: true
