@@ -2,13 +2,13 @@
   tags: gnome,gnome-wallpaper
   copy:
     src: '{{ playbook_dir }}/files/wallpapers/wallpaper.jpg'
-    dest: /usr/share/backgrounds/wallpaper.jpg
+    dest: "{{ lookup('env', 'HOME') }}/wallpaper.jpg"
     mode: 0644
 - name: gnome | appearance | set wallpaper
   tags: gnome,gnome-wallpaper
   dconf:
     key: '/org/gnome/desktop/background/picture-uri'
-    value: "'file:///usr/share/backgrounds/wallpaper.jpg'"
+    value: "'file://{{ lookup('env', 'HOME') }}/wallpaper.jpg'"
 - name: gnome | appearance | set wallpaper position
   tags: gnome,gnome-wallpaper
   dconf:
