@@ -7,8 +7,7 @@
 
 building docker images
 
-Note: the `bash` isn't required, but it drops into the
-container after building, which is usually very helpful.
+Note: the `bash` isn't required, but it drops into the container after building, which is usually very helpful.
 
 ```sh
 docker build . -t local bash
@@ -30,10 +29,9 @@ ansible-playbook local.yml -K
 
 ## TODO
 
-- [ ] clean up tags into csv list 
+- [ ] clean up tags into csv list
 - [ ] rename tasks with "area | task | detail" schema
-- [ ] add more catches for "Fedora" distribution (in case I want to experiment on
-      other distros and still use ansible)
+- [ ] add more catches for "Fedora" distribution (in case I want to experiment on other distros and still use ansible)
 - [ ] how can I automatically install:
   - [ ] chrome extensions?
   - [ ] gnome extensions?
