@@ -12,6 +12,7 @@
       - libappindicator-gtk3
       - librsvg2-devel
       - dconf
+      - dbus-daemon
   tags: install,libraries
 - name: corepackages | install | development tools
   become: true
