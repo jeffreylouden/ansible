@@ -1,32 +1,65 @@
 - name: fonts | config | ensure fonts directory exists
+  become: true
   file:
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono"
     mode: 700
     state: directory
+- name: fonts | permissions | Dank Mono Regular
+  become: true
+  file:
+    path: '{{ playbook_dir }}/files/fonts/DankMono-Regular.otf'
+    owner: jeffreylouden
+    group: jeffreylouden
+    mode: 0644
 - name: fonts | install | Dank Mono Regular
+  become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/DankMono-Regular.otf'
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Regular.otf"
     mode: 0644
     decrypt: true
+- name: fonts | permissions | Dank Mono Italic
+  become: true
+  file:
+    path: '{{ playbook_dir }}/files/fonts/DankMono-Italic.otf'
+    owner: jeffreylouden
+    group: jeffreylouden
+    mode: 0644
 - name: fonts | install | Dank Mono Italic
+  become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/DankMono-Italic.otf'
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Italic.otf"
     mode: 0644
     decrypt: true
+- name: fonts | permissions | Dank Mono Bold
+  become: true
+  file:
+    path: '{{ playbook_dir }}/files/fonts/DankMono-Bold.otf'
+    owner: jeffreylouden
+    group: jeffreylouden
+    mode: 0644
 - name: fonts | install | Dank Mono Bold
+  become: true
   copy:
-    src: '{{ playbook_dir }}/files/fonts/DankMono-Bolde.otf'
+    src: '{{ playbook_dir }}/files/fonts/DankMono-Bold.otf'
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Bold.otf"
     mode: 0644
     decrypt: true
+- name: fonts | permissions | Dank Mono Italic Nerd Font
+  become: true
+  file:
+    path: '{{ playbook_dir }}/files/fonts/Dank Mono Italic Nerd Font Mono.otf'
+    owner: jeffreylouden
+    group: jeffreylouden
+    mode: 0644
 - name: fonts | install | Dank Mono Italic Nerd Font Mono
+  become: true
   copy:
-    src: '{{ playbook_dir }}/files/fonts/Dank\ Mono\ Italic\ Nerd\ Font\ Mono.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/Dank\ Mono\ Italic\ Nerd\ Font\ Mono.otf"
+    src: '{{ playbook_dir }}/files/fonts/Dank Mono Italic Nerd Font Mono.otf'
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/Dank Mono Italic Nerd Font Mono.otf"
     mode: 0644
     decrypt: true
 - name: font | cache | reset font cache
   become: true
-  command: fc-cache
+  command: fc-cache -f
