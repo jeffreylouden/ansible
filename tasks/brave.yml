@@ -1,0 +1,10 @@
+- name: brave | config | add brave repo
+  become: true
+  command: 'dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/'
+- name: brave | config | import rpm
+  become: true
+  command: 'rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc'
+- name: brave | install | dnf package
+  become: true
+  dnf:
+    name: brave-browser
