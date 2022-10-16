@@ -21,6 +21,7 @@
     - include_tasks: tasks/zsh-setup.yml
     - include_tasks: tasks/brave.yml
     - include_tasks: tasks/flatpak.yml
+    - include_tasks: tasks/lazygit.yml
     - include_tasks: tasks/lazydocker.yml
     - include_tasks: tasks/fonts.yml
     - include_tasks: tasks/gnome/appearance.yml
