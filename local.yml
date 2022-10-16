@@ -8,6 +8,7 @@
     - include_tasks: tasks/dnf-configuration.yml
       when: ansible_distribution in ["Fedora"]
   tasks:
+    - include_tasks: tasks/hosts.yml
     - include_tasks: tasks/ssh.yml
     - include_tasks: tasks/core-setup.yml
       when: ansible_distribution in ["Fedora"]
