@@ -8,3 +8,12 @@
   become: true
   dnf:
     name: brave-browser
+- name: brave | extensions | create extensions directory
+  become: true
+  command: mkdir -p /usr/share/chromium/extensions
+- name: brave | extensions | copy extension files
+  become: true
+  copy:
+    src: '{{ playbook_dir }}/files/extensions/'
+    dest: "/usr/share/chromium/extensions/"
+    mode: 0644
