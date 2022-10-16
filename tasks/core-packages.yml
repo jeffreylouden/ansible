@@ -48,4 +48,5 @@
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - ulauncher # quick launch utility
+      - discord # chat application
   tags: install,terminal
