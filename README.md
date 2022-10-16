@@ -29,10 +29,16 @@ ansible-playbook local.yml -K
 
 ## TODO
 
-- [ ] clean up tags into csv list
+- [x] clean up tags into csv list
 - [x] rename tasks with "area | task | detail" schema
 - [ ] add more catches for "Fedora" distribution (in case I want to experiment on other distros and still use ansible)
 - [ ] how can I automatically install:
   - [ ] chrome extensions?
   - [ ] gnome extensions?
 - [ ] add better checks if directories exist
+- [ ] install /etc/hosts file
+- [x] brave extension links (until I can find out how to install them
+  automatically)
+- [x] add lazygit installation
+- [x] add lazydocker installation
+- [ ] automatically install gnome extensions
