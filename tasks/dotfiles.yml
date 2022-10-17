@@ -15,5 +15,5 @@
 - name: dotfiles | stow | run installation script
   shell: "cd ~/.dotfiles && ./install.sh"
   environment:
-    STOW_FOLDERS: "alacritty,bat,bin,git,nvim,tmux,tree-sitter,zsh"
+    STOW_FOLDERS: "alacritty,bat,bin,editoriconfig,git,nvim,prettier,tmux,tree-sitter,zsh"
   tags: install,dotfiles,stow
