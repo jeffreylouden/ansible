@@ -31,6 +31,7 @@
     - include_tasks: tasks/gnome/appearance.yml
     - include_tasks: tasks/gnome/keybindings.yml
     - include_tasks: tasks/gnome/peripherals.yml
+    - include_tasks: tasks/gnome/shell-settings.yml
     - include_tasks: tasks/gnome/packages.yml
     - include_tasks: tasks/moonlander.yml
     - include_tasks: tasks/music-production.yml
