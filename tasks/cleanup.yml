@@ -7,6 +7,13 @@
       - cheese
       - libreoffice*
       - rhythmbox
+      - gnome-maps
+      - gnome-boxes
+      - gnome-photos
+      - gnome-contacts
+      - gnome-calendar
+      - gnome-tour
+      - totem
     state: absent
 - name: system | cleanup | autoremove unneeded dependencies
   become: true
