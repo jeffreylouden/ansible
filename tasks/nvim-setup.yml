@@ -10,3 +10,5 @@
     name: neovim
     global: true
   tags: install,node,neovim
+# - name: neovim | install | install packer packages
+#   command: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
