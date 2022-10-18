@@ -38,3 +38,4 @@
 - name: zsh | cleanup | remove .zshrc so it can be stowed
   become: true
   command: "rm {{ lookup('env', 'HOME') }}/.zshrc"
+  ignore_errors: true
