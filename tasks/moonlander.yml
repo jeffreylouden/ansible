@@ -10,6 +10,7 @@
 - name: moonlander | config | add plugdev group
   become: true
   command: groupadd plugdev
+  ignore_errors: true
 - name: moonlander | config | add current user to plugdev group
   become: true
   shell: 'usermod -aG plugdev $USER'
