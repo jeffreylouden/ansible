@@ -12,12 +12,17 @@
   tags: gnome,mouse,peripherals
   dconf:
     key: '/org/gnome/desktop/peripherals/mouse/speed'
-    value: '0.59999999999999998'
+    value: '0.75'
 - name: gnome | peripherals | increase cursor speed (touchpad)
   tags: gnome,mouse,peripherals
   dconf:
     key: '/org/gnome/desktop/peripherals/touchpad/speed'
-    value: '0.59999999999999998'
+    value: '0.75'
+- name: gnome | peripherals | remap capslock as control
+  tags: gnome,keyboard,peripherals
+  dconf:
+    key: '/org/gnome/desktop/input-sources/xkb-opions'
+    value: "['ctrl:nocaps']"
 - name: gnome | peripherals | set manual night-light schedule
   tags: gnome,peripherals,night-light
   dconf:
