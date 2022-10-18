@@ -4,6 +4,13 @@
   dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     value: "false"
+    
+# Set clock to 12-hour format
+- name: gnome | shell settings | clock format
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-format"
+    value: "12h"
 
 - name: gnome | shell settings | event-sounds (disable)
   tags: gnome,audio,sounds,alerts
