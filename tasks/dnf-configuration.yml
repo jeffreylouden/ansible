@@ -1,3 +1,4 @@
+---
 - name: dnf | config | faster parallel downloads
   become: true
   shell: |

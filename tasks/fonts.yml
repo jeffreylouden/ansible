@@ -1,3 +1,4 @@
+---
 - name: fonts | config | ensure fonts directory exists
   become: true
   file:

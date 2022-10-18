@@ -1,3 +1,4 @@
+---
 - name: ssh | config | ensure .ssh directory exists
   file:
     dest: '{{ dest_key | dirname }}'

@@ -1,3 +1,4 @@
+---
 - name: zsh | install | zsh dnf package
   tags: install,productivity,dotfiles,zsh
   become: true

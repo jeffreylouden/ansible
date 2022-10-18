@@ -1,3 +1,4 @@
+---
 - name: flatpak | install | flatpak core
   become: true
   dnf:

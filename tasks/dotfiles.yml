@@ -1,3 +1,4 @@
+---
 - name: dotfiles | install | stow
   become: true
   dnf:

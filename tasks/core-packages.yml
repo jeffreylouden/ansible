@@ -1,3 +1,4 @@
+---
 - name: core packages | install
   become: true
   dnf:

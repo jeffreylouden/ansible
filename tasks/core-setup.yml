@@ -1,3 +1,4 @@
+---
 - name: core | dnf | update cache
   become: true
   dnf:

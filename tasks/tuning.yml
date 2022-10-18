@@ -1,3 +1,4 @@
+---
 - name: system | tune | ssd drives
   become: true
   command: systemctl enable fstrim.timer
