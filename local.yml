@@ -14,7 +14,6 @@
       when: ansible_distribution in ["Fedora"]
     - include_tasks: tasks/core-packages.yml
       when: ansible_distribution in ["Fedora"]
-    - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/node-setup.yml
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/rust-setup.yml
@@ -27,6 +26,7 @@
     - include_tasks: tasks/flatpak.yml
     - include_tasks: tasks/lazygit.yml
     - include_tasks: tasks/lazydocker.yml
+    - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/fonts.yml
     - include_tasks: tasks/gnome/appearance.yml
     - include_tasks: tasks/gnome/keybindings.yml
