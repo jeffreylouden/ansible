@@ -14,6 +14,7 @@
       when: ansible_distribution in ["Fedora"]
     - include_tasks: tasks/core-packages.yml
       when: ansible_distribution in ["Fedora"]
+    - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/node-setup.yml
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/rust-setup.yml
@@ -31,7 +32,6 @@
     - include_tasks: tasks/gnome/keybindings.yml
     - include_tasks: tasks/gnome/peripherals.yml
     - include_tasks: tasks/gnome/packages.yml
-    - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/moonlander.yml
     - include_tasks: tasks/music-production.yml
     - include_tasks: tasks/tuning.yml
