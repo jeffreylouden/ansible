@@ -2,7 +2,7 @@
 - name: gnome | shell settings | enable-hot-corners
   tags: gnome,gnome-shell
   dconf:
-    key: "/org/gnome/shell/interface/enable-hot-corners"
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
     value: "false"
 
 - name: gnome | shell settings | event-sounds (disable)
