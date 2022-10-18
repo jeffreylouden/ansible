@@ -27,9 +27,9 @@
   with_fileglob:
     - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
  - name: ssh | config | ensure github.com is a known host
-  lineinfile:
-    dest: "{{ lookup('env', 'HOME') }}/.ssh/known_hosts"
-    create: true
-    state: present
-    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
-    regexp: "^github\\.com"
+   lineinfile:
+     dest: "{{ lookup('env', 'HOME') }}/.ssh/known_hosts"
+     create: true
+     state: present
+     line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+     regexp: "^github\\.com"
