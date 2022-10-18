@@ -1,6 +1,10 @@
 ---
+- name: ensure fonts directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
 - name: fonts | config | create dank mono fonts directory
-  command: "mkdir -p {{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono"
+  command: "mkdir -p {{ lookup('env', 'HOME') }}/.fonts/dank-mono"
 - name: fonts | permissions | Dank Mono Regular
   become: true
   file:
@@ -12,7 +16,7 @@
   become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/DankMono-Regular.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Regular.otf"
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/DankMono-Regular.otf"
     mode: 0644
     decrypt: true
 - name: fonts | permissions | Dank Mono Italic
@@ -26,7 +30,7 @@
   become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/DankMono-Italic.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Italic.otf"
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/DankMono-Italic.otf"
     mode: 0644
     decrypt: true
 - name: fonts | permissions | Dank Mono Bold
@@ -40,7 +44,7 @@
   become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/DankMono-Bold.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/DankMono-Bold.otf"
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/DankMono-Bold.otf"
     mode: 0644
     decrypt: true
 - name: fonts | permissions | Dank Mono Italic Nerd Font
@@ -54,9 +58,20 @@
   become: true
   copy:
     src: '{{ playbook_dir }}/files/fonts/Dank Mono Italic Nerd Font Mono.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono/Dank Mono Italic Nerd Font Mono.otf"
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/Dank Mono Italic Nerd Font Mono.otf"
     mode: 0644
     decrypt: true
+- name: Hack exists
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Hack*Nerd*Font*Complete*"
+  register: hack_exists
+  ignore_errors: yes
+
+- name: Download Hack
+  when: hack_exists is failed
+  ansible.builtin.unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes
 - name: font | cache | reset font cache
   become: true
   command: fc-cache -f
