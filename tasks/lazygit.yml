@@ -1,0 +1,9 @@
+---
+- name: lazygit | install | add copr repo
+  become: true
+  command: dnf copr enable atim/lazygit -y
+- name: lazygit | install | dnf package
+  become: true
+  dnf:
+    name: lazygit
+
