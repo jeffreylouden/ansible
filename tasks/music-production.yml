@@ -7,7 +7,10 @@
       - xz # utility to untar u-he plugins
 - name: music production | DAW | bitwig studio (flatpak)
   become: true
-  command: 'flatpak install flathub --user com.bitwig.BitwigStudio --noninteractive'
+  community.general.flatpak:
+    name: com.bitwig.BitwigStudio
+    state: present
+    method: user
 - name: music production | install | tycmd (m8 firmware transfer tool)
   become: true
   dnf:
