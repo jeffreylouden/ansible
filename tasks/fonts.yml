@@ -1,10 +1,6 @@
 ---
-- name: fonts | config | ensure fonts directory exists
-  become: true
-  file:
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono"
-    mode: 700
-    state: directory
+- name: fonts | config | create dank mono fonts directory
+  command: "mkdir -p {{ lookup('env', 'HOME') }}/.local/share/fonts/dank-mono"
 - name: fonts | permissions | Dank Mono Regular
   become: true
   file:
