@@ -3,7 +3,21 @@
 - [ThePrimeagen ansible configuration](https://github.com/ThePrimeagen/ansible)
 - [LearnLinuxTV personal ansible](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
 
-## Scratch
+## Prerequisites
+
+Install ansible: `sudo dnf install ansible`
+
+## Installation
+
+_Note:_ it would be ideal to use `anisble-pull`, but there are some annoyances (such as `--ask-vault--pass` not working), so install with the following command:
+
+```
+git clone https://github.com/jeffreylouden/ansible/ ~/ansible
+cd ~/ansible
+ansible-playblook local.yml --ask-become-pass --ask-vault-pass
+```
+
+## Testing
 
 building docker images
 
@@ -22,7 +36,7 @@ docker run --rm -it local
 command to install everything
 
 ```sh
-ansible-playbook local.yml -K
+ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 ```
 
 ## TODO
