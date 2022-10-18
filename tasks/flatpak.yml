@@ -12,11 +12,11 @@
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-    method: user
+    method: system
 - name: flatpak | install | gnome extensions app
   become: true
   community.general.flatpak:
     name: org.gnome.Extensions
     state: present
-    method: user
+    method: system
   
