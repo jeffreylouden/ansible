@@ -1,4 +1,13 @@
 ---
+- name: system | cleanup | remove unwanted packages
+  become: true
+  dnf:
+    name:
+      - firefox
+      - cheese
+      - libreoffice*
+      - rhythmbox
+    state: absent
 - name: system | cleanup | autoremove unneeded dependencies
   become: true
   dnf:
