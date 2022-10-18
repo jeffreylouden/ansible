@@ -1,7 +1,9 @@
 ---
 - name: lazydocker | install | add copr repo
   become: true
-  command: dnf copr enable atim/lazydocker -y
+  copr:
+    state: enabled
+    name: atim/lazydocker
 - name: lazydocker | install | dnf package
   become: true
   dnf:
