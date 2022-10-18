@@ -12,12 +12,11 @@
     key: "/org/gnome/desktop/interface/clock-format"
     value: "'12h'"
     
-# Set color-scheme to dark
-- name: gnome | shell settings | dark mode
+- name: gnome | shell settings | customize dash panel
   tags: gnome,gnome-shell
   dconf:
-    key: "/org/gnome/desktop/interface/color-scheme"
-    value: "'prefer-dark'"
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'brave-browser.desktop', 'discord.desktop']"
 
 - name: gnome | shell settings | event-sounds (disable)
   tags: gnome,audio,sounds,alerts
