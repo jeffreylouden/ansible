@@ -1,0 +1,69 @@
+# Disable hot corners
+- name: gnome | shell settings | enable-hot-corners
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/shell/interface/enable-hot-corners"
+    value: "false"
+
+- name: gnome | shell settings | event-sounds (disable)
+  tags: gnome,audio,sounds,alerts
+  dconf:
+    key: "/org/gnome/desktop/sound/event-sounds"
+    value: "false"
+
+# Disable screen blanking
+- name: gnome | shell settings | idle-delay
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/session/idle-delay"
+    value: "uint32 0"
+
+# Disable input sounds
+- name: gnome | shell settings | input-feedback-sounds (disable input sounds)
+  tags: gnome,audio,sounds,alerts
+  dconf:
+    key: "/org/gnome/desktop/sound/input-feedback-sounds"
+    value: "false"
+
+- name: gnome | shell settings | old-files-age
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/privacy/old-files-age"
+    value: "uint32 14"
+
+- name: gnome | shell settings | remove-old-temp-files
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/privacy/remove-old-temp-files"
+    value: "true"
+
+- name: gnome | shell settings | remove-old-trash-files
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/privacy/remove-old-trash-files"
+    value: "true"
+
+- name: gnome | shell settings | show-battery-percentage
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/desktop/interface/show-battery-percentage"
+    value: "true"
+
+# Disable lock screen notifications
+- name: gnome | shell settings | show-in-lock-screen
+  tags: gnome,gnome-lockscreen
+  dconf:
+    key: "/org/gnome/desktop/notifications/show-in-lock-screen"
+    value: "false"
+
+- name: gnome | shell settings | workspaces-only-on-primary
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/shell/overrides/workspaces-only-on-primary"
+    value: "true"
+
+- name: gnome | shell settings | set gnome-screenshot default save directory
+  tags: gnome,gnome-shell
+  dconf:
+    key: "/org/gnome/gnome-screenshot/auto-save-directory"
+    value: "'/home/jeffreylouden'"
