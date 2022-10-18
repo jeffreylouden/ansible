@@ -34,3 +34,8 @@
     name: markdownlint-cli
     global: true
   tags: install,node
+- name: npm | install | stylua
+  npm:
+    name: '@johnnymorganz/stylua-bin'
+    global: true
+  tags: install,node
