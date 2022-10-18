@@ -7,7 +7,7 @@
 
 building docker images
 
-Note: the `bash` isn't required, but it drops into the container after building, which is usually very helpful.
+Note: if you want to jump into the container, include `bash` after the end of the command.
 
 ```sh
 docker build . -t local bash
@@ -16,10 +16,8 @@ docker build . -t local bash
 Run local docker installation:
 
 ```sh
-docker run --rm -it local bash
+docker run --rm -it local
 ```
-
-- add local host entry for raspberry pi (247) and pi hole (99)
 
 command to install everything
 
@@ -29,16 +27,6 @@ ansible-playbook local.yml -K
 
 ## TODO
 
-- [x] clean up tags into csv list
-- [x] rename tasks with "area | task | detail" schema
 - [ ] add more catches for "Fedora" distribution (in case I want to experiment on other distros and still use ansible)
-- [ ] how can I automatically install:
-  - [ ] chrome extensions?
-  - [ ] gnome extensions?
 - [ ] add better checks if directories exist
-- [ ] install /etc/hosts file
-- [x] brave extension links (until I can find out how to install them
-  automatically)
-- [x] add lazygit installation
-- [x] add lazydocker installation
 - [ ] automatically install gnome extensions
