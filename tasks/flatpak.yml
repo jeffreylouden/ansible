@@ -3,9 +3,6 @@
   become: true
   dnf:
     name: flatpak
-#- name: flatpak | config | add flathub remote
-#  become: true
-#  command: 'flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo'
 - name: flathub flatpak repo
   become: true
   community.general.flatpak_remote:
@@ -13,10 +10,3 @@
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     method: system
-- name: flatpak | install | gnome extensions app
-  become: true
-  community.general.flatpak:
-    name: org.gnome.Extensions
-    state: present
-    method: system
-  
