@@ -16,6 +16,7 @@
     src: '{{ source_key }}.pub'
     dest: '{{ dest_key }}.pub'
     mode: 0644
+    decrypt: true
   tags: dotfiles,install,ssh
 - name: ssh | config | set authorized key
   authorized_key:
