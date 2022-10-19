@@ -17,6 +17,7 @@
     - include_tasks: tasks/node-setup.yml
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/rust-setup.yml
+    - include_tasks: tasks/terraform-setup.yml
     - include_tasks: tasks/docker-setup.yml
     - include_tasks: tasks/lazydocker.yml
     - include_tasks: tasks/lazygit.yml
