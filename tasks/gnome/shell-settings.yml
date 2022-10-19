@@ -21,6 +21,12 @@
 - name: gnome | shell settings | event-sounds (disable)
   tags: gnome,audio,sounds,alerts
   dconf:
+    key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
+    value: "true"
+
+- name: gnome | shell settings | allow over-amplification
+  tags: gnome,audio,sounds
+  dconf:
     key: "/org/gnome/desktop/sound/event-sounds"
     value: "false"
 
