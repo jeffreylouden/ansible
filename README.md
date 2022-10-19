@@ -21,10 +21,6 @@ ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 
 ## Manual Installation Steps
 
-### Gnome Extensions
-
-Automatically installing (some) gnome extensions can be accomplished via `dnf`, but these extensions need to be manually configured.
-
 ### Brave
 
 There doesn't seem to be a way (at least I can find yet) to automatically configure brave via ansible or the cli, so this needs to be manually configured.
