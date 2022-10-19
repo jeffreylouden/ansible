@@ -39,3 +39,11 @@
     name: '@johnnymorganz/stylua-bin'
     global: true
   tags: install,node
+- name: npm | install | fixjson
+  npm:
+    name: fixjson
+    global: true
+- name: npm | install | shfmt
+  npm:
+    name: shfmt
+    global: true
