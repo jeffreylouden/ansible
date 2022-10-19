@@ -1,3 +1,8 @@
+- name: gnome | extensions | enable
+  tags: gnome,extensions
+  dconf:
+    key: '/org/gnome/shell/enabled-extensions'
+    value: "['auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection']"
 - name: gnome | extensions | auto-move windows
   tags: gnome,extensions
   dconf:
