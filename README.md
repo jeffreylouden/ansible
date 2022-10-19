@@ -1,6 +1,5 @@
 # Ansible configuration
 
-
 ## Prerequisites
 
 ### Install ansible
@@ -21,10 +20,7 @@ ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 
 ### Tags
 
-Included tasks make detailed use of tags to target specific installation stages.
-The `--list-tags` arg will list all available tags and tags can be passed as a
-csv list (e.g. `--tags "gnome,extensions")
-
+Included tasks make detailed use of tags to target specific installation stages. The `--list-tags` arg will list all available tags and tags can be passed as a csv list (e.g. `--tags "gnome,extensions"`)
 
 ## Manual Installation Steps
 
