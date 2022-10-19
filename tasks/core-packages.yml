@@ -51,4 +51,5 @@
       - bleachbit # system cleaning utility
       - discord # chat application
       - vlc # always good to have a media player and codecs
+      - shfmt # shell formatter for nvim null-ls package
   tags: install,terminal
