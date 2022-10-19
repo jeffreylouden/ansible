@@ -1,0 +1,5 @@
+- name: gnome | extensions | auto-move windows
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/auto-move-windows/application-list"
+    value: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3', 'com.bitwig.BitwigStudio.desktop:4']"
