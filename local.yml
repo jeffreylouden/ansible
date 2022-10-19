@@ -25,6 +25,7 @@
     - include_tasks: tasks/flatpak.yml
     - include_tasks: tasks/lazygit.yml
     - include_tasks: tasks/lazydocker.yml
+    - include_tasks: tasks/bottom.yml
     - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/nvim-setup.yml
     - include_tasks: tasks/fonts.yml

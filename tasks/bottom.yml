@@ -1,0 +1,11 @@
+---
+- name: bottom | install | add copr repo
+  become: true
+  community.general.copr:
+    state: enabled
+    name: atim/bottom
+- name: bottom | install | dnf package
+  become: true
+  dnf:
+    name: bottom
+
