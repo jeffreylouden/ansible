@@ -9,7 +9,6 @@
   community.general.flatpak:
     name: com.bitwig.BitwigStudio
     state: present
-    method: user
     remote: flathub
 - name: music production | install | tycmd (m8 firmware transfer tool)
   become: true
