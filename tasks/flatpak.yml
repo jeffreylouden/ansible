@@ -4,5 +4,4 @@
   dnf:
     name: flatpak
 - name: flathub flatpak repo
-  become: true
   command: 'flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo'
