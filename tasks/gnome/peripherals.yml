@@ -22,7 +22,7 @@
   tags: gnome,keyboard,peripherals
   dconf:
     key: '/org/gnome/desktop/input-sources/xkb-opions'
-    value: "['ctrl:nocaps']"
+    value: "['caps:ctrl_modifier']"
 - name: gnome | peripherals | set manual night-light schedule
   tags: gnome,peripherals,night-light
   dconf:
