@@ -16,18 +16,12 @@
     key: "/org/gnome/shell/extensions/just-perfection/app-menu"
     value: "false"
 
-- name: gnome | extensions | just-perfection | hide calendar in clock view
-  tags: gnome,extensions
-  dconf:
-    key: "/org/gnome/shell/extensions/just-perfection/calendar"
-    value: "false"
-    
 - name: gnome | extensions | just-perfection | hide weather in clock view
   tags: gnome,extensions
   dconf:
     key: "/org/gnome/shell/extensions/just-perfection/weather"
     value: "false"
-    
+
 - name: gnome | extensions | just-perfection | hide events in clock view
   tags: gnome,extensions
   dconf:
@@ -51,19 +45,19 @@
   dconf:
     key: "/org/gnome/shell/extensions/just-perfection/notification-banner-position"
     value: "2"
-    
+
 - name: gnome | extensions | just-perfection | hide calendar in clock view
   tags: gnome,extensions
   dconf:
     key: "/org/gnome/shell/extensions/just-perfection/calendar"
     value: "false"
-    
+
 - name: gnome | extensions | just-perfection | hide show applications button in panel
   tags: gnome,extensions
   dconf:
     key: "/org/gnome/shell/extensions/just-perfection/show-apps-button"
     value: "false"
-    
+
 - name: gnome | extensions | just-perfection | enable theme
   tags: gnome,extensions
   dconf:
