@@ -34,9 +34,38 @@
     key: "/org/gnome/shell/extensions/just-perfection/events-button"
     value: "false"
 
+- name: gnome | extensions | just-perfection | hide world clock in clock view
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/world-clock"
+    value: "false"
+
 - name: gnome | extensions | just-perfection | go to desktop on startup
   tags: gnome,extensions
   dconf:
     key: "/org/gnome/shell/extensions/just-perfection/startup-status"
     value: "0"
 
+- name: gnome | extensions | just-perfection | move notifications to top right
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/notification-banner-position"
+    value: "2"
+    
+- name: gnome | extensions | just-perfection | hide calendar in clock view
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/calendar"
+    value: "false"
+    
+- name: gnome | extensions | just-perfection | hide show applications button in panel
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/show-apps-button"
+    value: "false"
+    
+- name: gnome | extensions | just-perfection | enable theme
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/theme"
+    value: "true"
