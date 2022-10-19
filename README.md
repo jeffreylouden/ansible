@@ -51,12 +51,6 @@ command to install everything
 ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 ```
 
-## TODO
-
-- [ ] add more catches for "Fedora" distribution (in case I want to experiment on other distros and still use ansible)
-- [ ] add better checks if directories exist
-- [ ] automatically install gnome extensions
-
 ## References
 
 - [ThePrimeagen ansible configuration](https://github.com/ThePrimeagen/ansible)
