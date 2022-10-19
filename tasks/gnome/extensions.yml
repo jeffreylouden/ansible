@@ -3,3 +3,40 @@
   dconf:
     key: "/org/gnome/shell/extensions/auto-move-windows/application-list"
     value: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3', 'com.bitwig.BitwigStudio.desktop:4']"
+
+- name: gnome | extensions | just-perfection | hide activities button
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/activities-button"
+    value: "false"
+
+- name: gnome | extensions | just-perfection | hide application menu
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/app-menu"
+    value: "false"
+
+- name: gnome | extensions | just-perfection | hide calendar in clock view
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/calendar"
+    value: "false"
+    
+- name: gnome | extensions | just-perfection | hide weather in clock view
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/weather"
+    value: "false"
+    
+- name: gnome | extensions | just-perfection | hide events in clock view
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/events-button"
+    value: "false"
+
+- name: gnome | extensions | just-perfection | go to desktop on startup
+  tags: gnome,extensions
+  dconf:
+    key: "/org/gnome/shell/extensions/just-perfection/startup-status"
+    value: "0"
+
