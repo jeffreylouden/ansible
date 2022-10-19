@@ -6,7 +6,11 @@
       - ffmpeg # required media libraries for bitwig
       - xz # utility to untar u-he plugins
 - name: music production | DAW | bitwig studio (flatpak)
-  command: "flatpak install --user com.bitwig.BitwigStudio --noninteractive"
+  community.general.flatpak:
+    name: com.bitwig.BitwigStudio
+    state: present
+    method: user
+    remote: flathub
 - name: music production | install | tycmd (m8 firmware transfer tool)
   become: true
   dnf:
