@@ -50,4 +50,5 @@
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - discord # chat application
+      - vlc # always good to have a media player and codecs
   tags: install,terminal
