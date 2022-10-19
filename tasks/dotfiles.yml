@@ -14,7 +14,8 @@
     version: main
   tags: install,dotfiles,stow
 - name: dotfiles | stow | run installation script
-  shell: "cd ~/.dotfiles && ./install.sh"
+  become: true
+  shell: "cd ~/.dotfiles && sudo ./install.sh"
   environment:
     STOW_FOLDERS: "alacritty,bat,bin,editorconfig,git,nvim,prettier,tmux,zsh"
   tags: install,dotfiles,stow
