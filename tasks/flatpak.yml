@@ -2,6 +2,18 @@
 - name: flatpak | install | flatpak core
   become: true
   dnf:
-    name: flatpak
+    name:
+      - flatpak
+      - gnome-software-plugin-flatpak
 - name: flathub flatpak repo
-  command: 'flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo'
+  become: yes
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+- name: flatpak | install | repair flatpak installation
+  become: true
+  command: flatpak repair --user
+- name: flatpak | update | post-repair update flatpak
+  become: true
+  command: flatpak update
