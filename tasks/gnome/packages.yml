@@ -7,5 +7,3 @@
       - chrome-gnome-shell # gnome extensions chrome integration
       - gnome-shell-extension-auto-move-windows
       - gnome-shell-extension-just-perfection
-      - gnome-shell-extension-sound-output-device-chooser
-      - gnome-shell-extension-pop-shell
