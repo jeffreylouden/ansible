@@ -9,6 +9,7 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+      - docker-compose
       - docker-compose-plugin
 - name: start docker service on boot
   become: true
