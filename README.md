@@ -14,7 +14,7 @@ _Note:_ it would be ideal to use `anisble-pull`, but there are some annoyances (
 ```
 git clone https://github.com/jeffreylouden/ansible/ ~/ansible
 cd ~/ansible
-ansible-playblook local.yml --ask-become-pass --ask-vault-pass
+ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 ```
 
 ## Testing
