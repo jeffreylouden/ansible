@@ -1,6 +1,13 @@
+# Ansible configuration
+
+
 ## Prerequisites
 
-Install ansible: `sudo dnf install ansible`
+### Install ansible
+
+```
+sudo dnf install ansible
+```
 
 ## Installation
 
