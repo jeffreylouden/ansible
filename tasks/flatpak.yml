@@ -4,7 +4,6 @@
   dnf:
     name:
       - flatpak
-      - gnome-software-plugin-flatpak
 - name: flathub flatpak repo
   become: yes
   community.general.flatpak_remote:
