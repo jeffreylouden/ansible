@@ -29,6 +29,17 @@ Automatically installing (some) gnome extensions can be accomplished via `dnf`, 
 
 There doesn't seem to be a way (at least I can find yet) to automatically configure brave via ansible or the cli, so this needs to be manually configured.
 
+### Firmware Updates
+
+Automatically running firmware update might be dangerous, so the following commands can be run manually if desired:
+
+```
+sudo fwupdmgr get-devices
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+```
+
 ## Testing
 
 building docker images
