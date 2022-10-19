@@ -3,6 +3,7 @@
   dconf:
     key: '/org/gnome/shell/enabled-extensions'
     value: "['auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection']"
+
 - name: gnome | extensions | auto-move windows
   tags: gnome,extensions
   dconf:
@@ -50,12 +51,6 @@
   dconf:
     key: '/org/gnome/shell/extensions/just-perfection/notification-banner-position'
     value: '2'
-
-- name: gnome | extensions | just-perfection | hide calendar in clock view
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/calendar'
-    value: 'false'
 
 - name: gnome | extensions | just-perfection | hide show applications button in panel
   tags: gnome,extensions
