@@ -1,8 +1,3 @@
-## References
-
-- [ThePrimeagen ansible configuration](https://github.com/ThePrimeagen/ansible)
-- [LearnLinuxTV personal ansible](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
-
 ## Prerequisites
 
 Install ansible: `sudo dnf install ansible`
@@ -16,6 +11,14 @@ git clone https://github.com/jeffreylouden/ansible/ ~/ansible
 cd ~/ansible
 ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 ```
+
+## Manual Installation Steps
+
+### Gnome Extensions
+
+Automatically installing (some) gnome extensions can be accomplished via `dnf`, but these extensions need to be manually configured for now.
+
+### 
 
 ## Testing
 
@@ -44,3 +47,8 @@ ansible-playbook local.yml --ask-become-pass --ask-vault-pass
 - [ ] add more catches for "Fedora" distribution (in case I want to experiment on other distros and still use ansible)
 - [ ] add better checks if directories exist
 - [ ] automatically install gnome extensions
+
+## References
+
+- [ThePrimeagen ansible configuration](https://github.com/ThePrimeagen/ansible)
+- [LearnLinuxTV personal ansible](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
