@@ -47,7 +47,6 @@
       - cronie # cron jobs
       - neofetch # system information
       - ncdu # disk usage management utility
-      - htop # resource management utility
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - discord # chat application
