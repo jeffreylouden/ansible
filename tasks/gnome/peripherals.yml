@@ -21,7 +21,7 @@
 - name: gnome | peripherals | remap capslock as control
   tags: gnome,keyboard,peripherals
   dconf:
-    key: '/org/gnome/desktop/input-sources/xkb-opions'
+    key: '/org/gnome/desktop/input-sources/xkb-options'
     value: "['caps:ctrl_modifier']"
 - name: gnome | peripherals | set manual night-light schedule
   tags: gnome,peripherals,night-light
