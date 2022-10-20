@@ -6,10 +6,30 @@
       - ffmpeg # required media libraries for bitwig
       - xz # utility to untar u-he plugins
 - name: music production | DAW | bitwig studio (flatpak)
+  tags: install,flatpak,bitwig
   community.general.flatpak:
     name: com.bitwig.BitwigStudio
     state: present
     remote: flathub
+- name: music production | DAW | stow studio files
+  git:
+    repo: 'git@github.com:jeffreylouden/studio.git'
+    dest: '~/.studio'
+    recursive: true
+    update: true
+    accept_hostkey: true
+    version: main
+  tags: install,bitwig,studio
+- name: music production | DAW | remove Bitwig Studio folder if it exists
+  tags: bitwig
+  file:
+    path: "{{ lookup('env', 'HOME') }}/Bitwig\ Studio"
+    state: absent
+- name: music production | DAW | stow studio files
+  tags: bitwig,studio,stow
+  command: 'stow .'
+  args:
+    chdir: '~/.studio'
 - name: music production | install | tycmd (m8 firmware transfer tool)
   become: true
   dnf:
