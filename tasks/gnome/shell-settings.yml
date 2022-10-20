@@ -4,14 +4,14 @@
   dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     value: "false"
-    
+
 # Set clock to 12-hour format
 - name: gnome | shell settings | clock format
   tags: gnome,gnome-shell
   dconf:
     key: "/org/gnome/desktop/interface/clock-format"
     value: "'12h'"
-    
+
 - name: gnome | shell settings | customize dash panel
   tags: gnome,gnome-shell
   dconf:
@@ -21,13 +21,13 @@
 - name: gnome | shell settings | event-sounds (disable)
   tags: gnome,audio,sounds,alerts
   dconf:
-    key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
+    key: "/org/gnome/desktop/sound/event-sounds"
     value: "true"
 
 - name: gnome | shell settings | allow over-amplification
   tags: gnome,audio,sounds
   dconf:
-    key: "/org/gnome/desktop/sound/event-sounds"
+    key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
     value: "false"
 
 # Disable screen blanking
