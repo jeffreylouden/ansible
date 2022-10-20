@@ -1,3 +1,10 @@
+# Enable Dark Mode
+- name: gnome | shell settings | enable dark mode
+  tags: gnome,gnome-shell
+  dconf:
+    key: '/org/gnome/desktop/interface/color-scheme'
+    value: "'prefer-dark'"
+
 # Disable hot corners
 - name: gnome | shell settings | enable-hot-corners
   tags: gnome,gnome-shell
