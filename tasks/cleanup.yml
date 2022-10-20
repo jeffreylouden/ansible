@@ -1,4 +1,23 @@
 ---
+- name: system | cleanup | remove unwanted packages
+  become: true
+  dnf:
+    name:
+      - firefox
+      - cheese
+      - libreoffice-core
+      - libreoffice-calc
+      - libreoffice-impress
+      - libreoffice-writer
+      - rhythmbox
+      - gnome-maps
+      - gnome-boxes
+      - gnome-photos
+      - gnome-contacts
+      - gnome-calendar
+      - gnome-tour
+      - totem
+    state: absent
 - name: system | cleanup | autoremove unneeded dependencies
   become: true
   dnf:
