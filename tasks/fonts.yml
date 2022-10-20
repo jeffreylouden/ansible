@@ -47,31 +47,6 @@
     dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/DankMono-Bold.otf"
     mode: 0644
     decrypt: true
-- name: fonts | permissions | Dank Mono Italic Nerd Font
-  become: true
-  file:
-    path: '{{ playbook_dir }}/files/fonts/Dank Mono Italic Nerd Font Mono.otf'
-    owner: jeffreylouden
-    group: jeffreylouden
-    mode: 0644
-- name: fonts | install | Dank Mono Italic Nerd Font Mono
-  become: true
-  copy:
-    src: '{{ playbook_dir }}/files/fonts/Dank Mono Italic Nerd Font Mono.otf'
-    dest: "{{ lookup('env', 'HOME') }}/.fonts/dank-mono/Dank Mono Italic Nerd Font Mono.otf"
-    mode: 0644
-    decrypt: true
-- name: Hack exists
-  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Hack*Nerd*Font*Complete*"
-  register: hack_exists
-  ignore_errors: yes
-
-- name: Download Hack
-  when: hack_exists is failed
-  ansible.builtin.unarchive:
-    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
-    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
-    remote_src: yes
 - name: font | cache | reset font cache
   become: true
   command: fc-cache -f
