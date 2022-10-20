@@ -1,21 +1,15 @@
 # Ansible configuration
 
-## Prerequisites
-
-### Install ansible
-
-```
-sudo dnf install ansible
-```
-
 ## Installation
 
-_Note:_ it would be ideal to use `anisble-pull`, but there are some annoyances (such as `--ask-vault--pass` not working), so install with the following command:
+1. [Install Ansible](https://www.ansible.com/). Since this is currently [Fedora](https://getfedora.org/)-based, `sudo dnf install ansible`.
+
+2. Create a [vault password file](https://docs.ansible.com/ansible/latest/user_guide/vault.html#storing-passwords-in-files)
+
+3. Run the following:
 
 ```
-git clone https://github.com/jeffreylouden/ansible/ ~/ansible
-cd ~/ansible
-ansible-playbook local.yml --ask-become-pass --ask-vault-pass
+ansible-pull --url https://github.com/jeffreylouden/ansible --ask-become-pass --vault-password-file [YOUR_VAULT_PASSWORD_FILE]
 ```
 
 ### Tags
@@ -41,18 +35,22 @@ sudo fwupdmgr update
 
 ## Testing
 
-building docker images
-
-Note: if you want to jump into the container, include `bash` after the end of the command.
+### Build local docker image
 
 ```sh
-docker build . -t local bash
+docker build . -t local
 ```
 
-Run local docker installation:
+### Run ansible-playbook in local docker container
 
 ```sh
 docker run --rm -it local
+```
+
+*Note:* if you want to jump into the container, include `bash` after the end of the command:
+
+```sh
+docker run --rm -it local bash
 ```
 
 ## References
