@@ -18,4 +18,4 @@
   tags: gnome,gnome-wallpaper
   dconf:
     key: '/org/gnome/desktop/background/picture-options'
-    value: "'fill'"
+    value: "'zoom'"
