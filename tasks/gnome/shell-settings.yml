@@ -93,3 +93,9 @@
   dconf:
     key: '/org/gnome/gnome-screenshot/auto-save-directory'
     value: "'/home/jeffreylouden'"
+
+- name: gnome | shell settings | show hidden files
+  tags: gnome,gnome-shell
+  dconf:
+    key: '/org/gtk/settings/file-chooser/show-hidden'
+    value: 'true'
