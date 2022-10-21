@@ -63,3 +63,9 @@
   dconf:
     key: '/org/gnome/shell/extensions/just-perfection/theme'
     value: 'true'
+
+- name: gnome | extensions | just-perfection | hide power icon
+  tags: gnome,extensions
+  dconf:
+    key: '/org/gnome/shell/extensions/just-perfection/power-icon'
+    value: 'false'
