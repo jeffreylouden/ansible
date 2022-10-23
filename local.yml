@@ -23,7 +23,6 @@
     - import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/zsh-setup.yml
     - import_tasks: tasks/brave.yml
-    - import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/lazydocker.yml
     - import_tasks: tasks/bottom.yml

@@ -5,44 +5,40 @@
     name:
       - ffmpeg # required media libraries for bitwig
       - xz # utility to untar u-he plugins
-- name: music production | DAW | bitwig studio (flatpak)
-  tags: install,flatpak,bitwig
-  community.general.flatpak:
-    name: com.bitwig.BitwigStudio
-    state: present
-    remote: flathub
-- name: music production | DAW | stow studio files
-  git:
-    repo: 'git@github.com:jeffreylouden/studio.git'
-    dest: '~/.studio'
-    recursive: true
-    update: true
-    accept_hostkey: true
-    version: main
-  tags: install,bitwig,studio
-- name: music production | DAW | remove Bitwig Studio folder if it exists
-  tags: bitwig
-  file:
-    path: "{{ lookup('env', 'HOME') }}/Bitwig\ Studio"
-    state: absent
-- name: music production | DAW | stow studio files
-  tags: bitwig,studio,stow
-  command: 'stow .'
-  args:
-    chdir: '~/.studio'
-- name: music production | install | tycmd (m8 firmware transfer tool)
+      - kf5-kservice # KDE dependencies for reaper
+      - tycmd # m8 firmware tool
+- name: music production | DAW | download reaper
+  tags: install, music, reaper
+  shell: 'curl -L https://www.reaper.fm/files/6.x/reaper668_linux_x86_64.tar.xz | tar -xJ'
+- name: music production | DAW | install reaper
+  tags: install, music, reaper
   become: true
-  dnf:
-    name: tycmd
-- name: music production | plugin | download u-he MFM2 plugin
+  shell: './reaper_linux_x86_64/install-reaper.sh --quiet --install /opt --integrate-user-desktop'
+- name: music production | plugins | download u-he MFM2 plugin
+  tags: install, music, plugins
   shell: 'curl -L https://dl.u-he.com/releases/MFM2_25_13385_Linux.tar.xz | tar -xJ'
-- name: music production | plugin | install u-he MFM2 plugin
+- name: music production | plugins | install u-he MFM2 plugin
+  tags: install, music, plugins
   command: './MFM2-13385/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
-- name: music production | plugin | download u-he Satin plugin
+- name: music production | plugins | download u-he Satin plugin
+  tags: install, music, plugins
   shell: 'curl -L https://dl.u-he.com/releases/Satin_132_12092_Linux.tar.xz | tar -xJ'
-- name: music production | plugin | install u-he Satin plugin
+- name: music production | plugins | install u-he Satin plugin
+  tags: install, music, plugins
   command: './Satin-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
-- name: music production | plugin | download u-he Presswerk plugin
+- name: music production | plugins | download u-he Presswerk plugin
+  tags: install, music, plugins
   shell: 'curl -L  https://dl.u-he.com/releases/Presswerk_115_12092_Linux.tar.xz | tar -xJ'
-- name: music production | plugin | install u-he Presswerk plugin
+- name: music production | plugins | install u-he Presswerk plugin
+  tags: install, music, plugins
   command: './Presswerk-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
+- name: music production | plugins | download TAL Reverb
+  tags: install, music, plugins
+  command: 'wget "https://tal-software.com/downloads/plugins/TAL-Reverb-4_64_linux.zip"'
+- name: music production | plugins | unzip TAL Reverb
+  tags: install, music, plugins
+  command: 'unzip -o TAL-Reverb-4_64_linux.zip'
+- name: music production | plugins | move TAL Reverb
+  tags: install, music, plugins
+  command: 'mv TAL-Reverb-4.vst3 ~/.vst3'
+
