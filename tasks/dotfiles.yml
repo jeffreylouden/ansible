@@ -1,10 +1,11 @@
 ---
 - name: dotfiles | install | stow
+  tags: install,dotfiles,stow
   become: true
   dnf:
     name: stow
-  tags: install,dotfiles,stow
 - name: dotfiles | install | clone .dotfiles repository
+  tags: install,dotfiles,stow
   git:
     repo: 'git@github.com:jeffreylouden/.dotfiles.git'
     dest: '~/.dotfiles'
@@ -12,9 +13,8 @@
     update: true
     accept_hostkey: true
     version: main
-  tags: install,dotfiles,stow
 - name: dotfiles | stow | run installation script
-  shell: "cd ~/.dotfiles && ./install.sh"
-  environment:
-    STOW_FOLDERS: "alacritty,bat,bin,editorconfig,git,nvim,prettier,tmux,zsh"
   tags: install,dotfiles,stow
+  shell: 'cd ~/.dotfiles && ./install.sh'
+  environment:
+    STOW_FOLDERS: 'alacritty,bat,bin,editorconfig,git,nvim,prettier,tmux,zsh'

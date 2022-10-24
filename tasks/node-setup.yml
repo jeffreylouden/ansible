@@ -1,27 +1,27 @@
 ---
 - name: node | install | nodejs and npm
+  tags: install,node
   become: true
   dnf:
     name:
       - 'nodejs'
       - 'npm'
-  tags: install,node
 - name: node | config | create npmjs prefix directory
+  tags: install,node
   command: mkdir -p "{{ lookup('env', 'HOME') }}/.local/.npm-global"
-  tags: install,node
 - name: node | config | set npmjs global prefix
-  command: npm config set prefix "{{ lookup('env', 'HOME') }}/.local/.npm-global"
   tags: install,node
+  command: npm config set prefix "{{ lookup('env', 'HOME') }}/.local/.npm-global"
 - name: node | install | n node manager
+  tags: install,node
   npm:
     name: n
     global: true
   environment:
     PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
-  tags: install,node
 - name: node | install | node 16
+  tags: install,node
   become: true
   command: n 16
   environment:
     PATH: "{{ lookup('env', 'HOME') }}/.local/.npm-global/bin:{{ ansible_env.PATH }}"
-  tags: install,node

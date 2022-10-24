@@ -1,45 +1,46 @@
 ---
 - name: npm | install | yarn
+  tags: install,node
   npm:
     name: yarn
     global: true
-  tags: install,node
 - name: npm | install | eslint
+  tags: install,node
   npm:
     name: eslint
     global: true
-  tags: install,node
 - name: npm | install | typescript language server
+  tags: install,node
   npm:
     name: typescript-language-server
     global: true
-  tags: install,node
 - name: npm | install | typescript
+  tags: install,node
   npm:
     name: typescript
     global: true
-  tags: install,node
 - name: npm | install | ts-node
+  tags: install,node
   npm:
     name: ts-node
     global: true
-  tags: install,node
 - name: npm | install | prettierd
+  tags: install,node
   npm:
     name: '@fsouza/prettierd'
     global: true
-  tags: install,node
 - name: npm | install | markdownlint
+  tags: install,node
   npm:
     name: markdownlint-cli
     global: true
-  tags: install,node
 - name: npm | install | stylua
+  tags: install,node
   npm:
     name: '@johnnymorganz/stylua-bin'
     global: true
-  tags: install,node
 - name: npm | install | fixjson
+  tags: install,node
   npm:
     name: fixjson
     global: true

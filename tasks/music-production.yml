@@ -19,8 +19,10 @@
   shell: 'curl -L https://www.sws-extension.org/download/featured/sws-2.12.1.3-Linux-x86_64.tar.xz | tar -xJ -C ~/.config/REAPER'
 
 - name: music production | reaper | download reaPack extensions
+  tags: install, music, reaper, reapack, extensions
   command: 'wget https://github.com/cfillion/reapack/releases/download/v1.2.4.2/reaper_reapack-x86_64.so'
 - name: music production | reaper | install reaPack extensions
+  tags: install, music, reaper, reapack, extensions
   command: 'mv reaper_reapack-x86_64.so ~/.config/REAPER/UserPlugins'
 
 - name: music production | plugins | download u-he MFM2 plugin

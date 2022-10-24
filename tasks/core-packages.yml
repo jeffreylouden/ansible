@@ -1,5 +1,6 @@
 ---
 - name: core packages | install
+  tags: install,libraries
   become: true
   dnf:
     name:
@@ -15,21 +16,22 @@
       - dconf
       - dbus-daemon
       - fwupd
-  tags: install,libraries
 - name: corepackages | install | development tools
+  tags: install,development
   become: true
   dnf:
     name: '@Development tools'
-  tags: install,development
 - name: core packages | install | clang development tools
+  tags: install,development
   become: true
   dnf:
     name: '@C Development Tools and Libraries'
-  tags: install,development
 - name: core packages | install | python dependencies
+  tags: install,python
   become: true
   command: pip install psutil --no-input --quiet
 - name: core packages | install | essential user packages
+  tags: install,terminal
   become: true
   dnf:
     name:
@@ -52,4 +54,3 @@
       - discord # chat application
       - vlc # always good to have a media player and codecs
       - shfmt # shell formatter for nvim null-ls package
-  tags: install,terminal

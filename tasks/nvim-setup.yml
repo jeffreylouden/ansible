@@ -1,19 +1,21 @@
 - name: neovim | install | dnf package
+  tags: install,libraries,neovim
   become: true
   dnf:
     name:
       - neovim
       - python3-neovim
-  tags: install,libraries,neovim
 - name: neovim | install | npm package
+  tags: install,node,neovim
   npm:
     name: neovim
     global: true
-  tags: install,node,neovim
 - name: neovim | install | install Packer
+  tags: install,neovim,packer
   git:
     repo: 'https://github.com/wbthomason/packer.nvim'
     dest: '~/.local/share/nvim/site/pack/packer/start/packer.nvim'
     depth: 1
 - name: neovim | install | install packer packages
+  tags: install,neovim,packer
   command: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

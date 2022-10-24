@@ -36,6 +36,7 @@
     repo: 'https://github.com/sindresorhus/pure.git'
     dest: "{{ lookup('env', 'HOME') }}/.zsh/pure"
 - name: zsh | cleanup | remove .zshrc so it can be stowed
+  tags: install,productivity,dotfiles,zsh,cleanup
   become: true
   command: "rm {{ lookup('env', 'HOME') }}/.zshrc"
   ignore_errors: true

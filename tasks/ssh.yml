@@ -1,24 +1,24 @@
 ---
 - name: ssh | config | ensure .ssh directory exists
+  tags: dotfiles,install,ssh
   file:
     dest: '{{ dest_key | dirname }}'
     mode: 0700
     state: directory
-  tags: dotfiles,install,ssh
 - name: ssh | install | private ssh key
+  tags: dotfiles,install,ssh
   copy:
     src: '{{ source_key }}'
     dest: '{{ dest_key }}'
     mode: 0600
     decrypt: true
-  tags: dotfiles,install,ssh
 - name: ssh | install | public ssh key
+  tags: dotfiles,install,ssh
   copy:
     src: '{{ source_key }}.pub'
     dest: '{{ dest_key }}.pub'
     mode: 0644
     decrypt: true
-  tags: dotfiles,install,ssh
 - name: ssh | config | set authorized key
   authorized_key:
     user: jeffreylouden

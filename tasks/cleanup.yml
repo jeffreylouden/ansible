@@ -1,5 +1,6 @@
 ---
 - name: system | cleanup | remove unwanted packages
+  tags: system,cleanup
   become: true
   dnf:
     name:
@@ -19,9 +20,11 @@
       - totem
     state: absent
 - name: system | cleanup | autoremove unneeded dependencies
+  tags: system,cleanup
   become: true
   dnf:
     autoremove: true
 - name: system | cleanup | clean leftover dnf files
+  tags: system,cleanup
   become: true
   shell: dnf clean all

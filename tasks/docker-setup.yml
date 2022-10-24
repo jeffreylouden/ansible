@@ -1,8 +1,10 @@
 ---
 - name: docker | install | add repo configuration
+  tags: install,docker
   become: true
   command: 'dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo'
 - name: docker | install | dnf packages
+  tags: install,docker
   become: true
   dnf:
     name:
@@ -12,13 +14,17 @@
       - docker-compose
       - docker-compose-plugin
 - name: docker | setup | enable rootless
-  command: "dockerd-rootless-setuptool.sh install"
+  tags: install,docker
+  command: 'dockerd-rootless-setuptool.sh install'
 - name: docker | setup | start docker service on boot
+  tags: install,docker
   become: true
   command: systemctl enable docker.service
 - name: start containerd service on boot
+  tags: install,docker
   become: true
-  command: "loginctl enable-linger jeffreylouden"
+  command: 'loginctl enable-linger jeffreylouden'
 - name: add current user to docker group
+  tags: install,docker
   become: true
   shell: 'usermod -aG docker $USER'
