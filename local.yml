@@ -26,6 +26,7 @@
     - import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/lazydocker.yml
     - import_tasks: tasks/bottom.yml
+    - import_tasks: tasks/software-development.yml
     - import_tasks: tasks/dotfiles.yml
     - import_tasks: tasks/nvim-setup.yml
     - import_tasks: tasks/fonts.yml

@@ -1,0 +1,2 @@
+- name: software development | install | create code directory
+  command: mkdir -p ~/code
