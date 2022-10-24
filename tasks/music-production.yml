@@ -52,13 +52,4 @@
   command: 'unzip -o TAL-Reverb-4_64_linux.zip -d TAL-Reverb/'
 - name: music production | plugins | move TAL Reverb
   tags: install, music, plugins
-
-- name: music production | plugins | download VCV Rack
-  tags: install, music, plugins
-  command: 'wget "https://vcvrack.com/RackProDownload?version=2.1.2&arch=li"'
-- name: music production | plugins | unzip VCV Rack
-  tags: install, music, plugins
-  command: 'unzip -o TAL-Reverb-4_64_linux.zip VCV-Rack/'
-- name: music production | plugins | move VCV Rack
-  tags: install, music, plugins
-  command: 'mv Tal-Reverb/TAL-Reverb-4.vst3 ~/.vst3'
+  command: ' cp -r TAL-Reverb/TAL-Reverb-4.vst3 ~/.vst3'
