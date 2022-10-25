@@ -18,3 +18,6 @@
   shell: 'cd ~/.dotfiles && ./install.sh'
   environment:
     STOW_FOLDERS: 'alacritty,bat,bin,editorconfig,git,nvim,prettier,tmux,zsh'
+- name: dotfiles | bat | rebuild theme cache
+  tags: install,dotfiles,bat
+  shell: 'bat cache --build'
