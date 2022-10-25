@@ -1,4 +1,13 @@
 ---
 - name: system | tune | ssd drives
+  tags: system, tuning
   become: true
   command: systemctl enable fstrim.timer
+- name: system | tune | stop packagekit
+  tags: system, tuning
+  become: true
+  command: systemctl stop packagekit
+- name: system | tune | disable packagekit
+  tags: system, tuning
+  become: true
+  command: systemctl disable packagekit
