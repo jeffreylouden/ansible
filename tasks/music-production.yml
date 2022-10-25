@@ -25,7 +25,7 @@
 - name: music production | DAW | install reaper
   tags: install, music, reaper
   become: true
-  shell: './reaper_linux_x86_64/install-reaper.sh --quiet --install /opt --integrate-sys-desktop'
+  shell: './reaper_linux_x86_64/install-reaper.sh --quiet --install ~/opt --integrate-user-desktop'
 
 - name: music production | reaper | install sws sws-extension
   tags: install, music, reaper
