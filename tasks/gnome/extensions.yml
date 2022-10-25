@@ -8,7 +8,7 @@
   tags: gnome,extensions
   dconf:
     key: '/org/gnome/shell/extensions/auto-move-windows/application-list'
-    value: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3', 'com.bitwig.BitwigStudio.desktop:4']"
+    value: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3', 'cockos-reaper.desktop:4']"
 
 - name: gnome | extensions | just-perfection | hide activities button
   tags: gnome,extensions
