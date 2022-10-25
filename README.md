@@ -22,13 +22,21 @@ Included tasks make detailed use of tags to target specific installation stages.
 
 There doesn't seem to be a way (at least I can find yet) to automatically configure brave via ansible or the cli, so this needs to be manually configured.
 
+### Music Production
+
+#### [Tukan Plugins](https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS)
+
+Incredible (**and free!**) plugins for [Reaper](https://www.reaper.fm/) that emulate classic studio gear. [Support his continued work on Patreon](https://www.patreon.com/tukanstudios).
+
+Follow [these instructions](https://stash.reaper.fm/v/43504/TUKANPLUGINS.png) or watch [this video](https://www.youtube.com/watch?v=BJI52lUZxJU) to install them via Reapack.
+
+#### [VCV Rack](https://vcvrack.com/)
+
+Cross-platform modular system. The pro version requires login to access, so installing via ansible won't currently work.
+
 ### Additional Applications
 
-- [Spotify](https://www.spotify.com/us/download/linux/)'s linux applications are not officially supported, so I used their web player. A native application can be downloaded, but it's riddled with memory, HiDPI and other basic issues.
-
 - [Zoom](https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux) has pretty solid linux support, but isn't available in Fedora's core repostories and the Flatpak version is consistently behind. Follow the link above to install it manually.
-
-- [Slack](https://slack.com/downloads/linux) for linux is currently in *beta*, but works relatively well. They do offer a Flatpak, but it suffers from some [longstanding freedesktop installation issues](https://github.com/flatpak/flatpak/issues/3197) (be careful going down this rabbit hole). Best to download and install directly from Slack manually or use their web client.
 
 ### Firmware Updates
 
@@ -55,7 +63,7 @@ docker build . -t local
 docker run --rm -it local
 ```
 
-*Note:* if you want to jump into the container, include `bash` after the end of the command:
+_Note:_ if you want to jump into the container, include `bash` after the end of the command:
 
 ```sh
 docker run --rm -it local bash
