@@ -6,6 +6,19 @@
       - xz # utility to untar u-he plugins
       - kf5-kservice # KDE dependencies for reaper
       - tycmd # m8 firmware tool
+      - libcurl # seemingly a dependency for Audio Assault plugins
+- name: music production | config | add libcurl-gnutls copr repo
+  tags: install,music,dependencies
+  become: true
+  community.general.copr:
+    state: enabled
+    name: patrickl/libcurl-gnutls
+- name: music production | install | libcurl-gnutls package
+  tags: install,music,dependencies
+  become: true
+  dnf:
+    name: libcurl-gnutls
+
 - name: music production | DAW | download reaper
   tags: install, music, reaper
   shell: 'curl -L https://www.reaper.fm/files/6.x/reaper668_linux_x86_64.tar.xz | tar -xJ'
