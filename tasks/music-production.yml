@@ -27,8 +27,19 @@
   become: true
   shell: './reaper_linux_x86_64/install-reaper.sh --quiet --install ~/opt --integrate-user-desktop'
 
-- name: music production | reaper | create reaper config folder # NOTE: remove after stow is implemented
-  command: mkdir -p ~/.config/REAPER
+- name: music production | install | clone studio repository
+  tags: install,music,reaper,stow
+  git:
+    repo: 'git@github.com:jeffreylouden/studio.git'
+    dest: '~/.studio'
+    recursive: true
+    update: true
+    accept_hostkey: true
+    version: main
+
+- name: music production | stow | run installation script
+  tags: install,music,reaper,stow
+  shell: 'cd ~/.studio && ./install.sh'
 
 - name: music production | reaper | install sws sws-extension
   tags: install, music, reaper
