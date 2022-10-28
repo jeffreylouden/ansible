@@ -1,9 +1,4 @@
 ---
-- name: dotfiles | install | stow
-  tags: install,dotfiles,stow
-  become: true
-  dnf:
-    name: stow
 - name: dotfiles | install | clone .dotfiles repository
   tags: install,dotfiles,stow
   git:

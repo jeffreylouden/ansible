@@ -47,6 +47,7 @@
       - gh # github cli
       - lsof
       - cronie # cron jobs
+      - stow # managed symlinks
       - neofetch # system information
       - ncdu # disk usage management utility
       - wireshark # network monitoring utility
