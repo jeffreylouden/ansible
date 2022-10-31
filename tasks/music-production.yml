@@ -82,4 +82,6 @@
 - name: music production | plugins | move TAL Reverb
   tags: install, music, plugins
   command: ' cp -r TAL-Reverb/TAL-Reverb-4.vst3 ~/.vst3'
-# TODO: automate installing Audio Assault plugins (if possible)
+
+# https://copr.fedorainfracloud.org/coprs/patrickl/wine-tkg-testing/
+# https://copr.fedorainfracloud.org/coprs/patrickl/yabridge-stable/
