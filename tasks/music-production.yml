@@ -22,6 +22,7 @@
 - name: music production | DAW | download reaper
   tags: install, music, reaper
   shell: 'curl -L https://www.reaper.fm/files/6.x/reaper668_linux_x86_64.tar.xz | tar -xJ'
+  # TODO: This might need to run after a restart. Not sure how to handle that.
 - name: music production | DAW | install reaper
   tags: install, music, reaper
   become: true
