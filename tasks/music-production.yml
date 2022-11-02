@@ -74,6 +74,13 @@
   tags: install, music, plugins
   command: './Presswerk-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
 
+- name: music production | plugins | download u-he Diva plugin
+  tags: install, music, plugins
+  shell: 'curl -L  https://dl.u-he.com/releases/Diva_145_12092_Linux.tar.xz | tar -xJ'
+- name: music production | plugins | install u-he Diva plugin
+  tags: install, music, plugins
+  command: './Diva-145-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
+
 - name: music production | plugins | download TAL Reverb
   tags: install, music, plugins
   command: 'wget "https://tal-software.com/downloads/plugins/TAL-Reverb-4_64_linux.zip"'
@@ -83,6 +90,5 @@
 - name: music production | plugins | move TAL Reverb
   tags: install, music, plugins
   command: ' cp -r TAL-Reverb/TAL-Reverb-4.vst3 ~/.vst3'
-
 # https://copr.fedorainfracloud.org/coprs/patrickl/wine-tkg-testing/
 # https://copr.fedorainfracloud.org/coprs/patrickl/yabridge-stable/
