@@ -4,12 +4,12 @@
 
 1. [Install Ansible](https://www.ansible.com/). Since this is currently [Fedora](https://getfedora.org/)-based, `sudo dnf install ansible`.
 
-2. Create a [vault password file](https://docs.ansible.com/ansible/latest/user_guide/vault.html#storing-passwords-in-files)
+2. Create a [vault password file](https://docs.ansible.com/ansible/latest/user_guide/vault.html#storing-passwords-in-files) -- I use `.vault_pass`
 
 3. Run the following:
 
 ```
-ansible-pull --url https://github.com/jeffreylouden/ansible --ask-become-pass --vault-password-file [YOUR_VAULT_PASSWORD_FILE]
+ansible-pull --url https://github.com/jeffreylouden/ansible --ask-become-pass --vault-password-file .vault_pass
 ```
 
 ### Tags
