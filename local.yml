@@ -37,8 +37,8 @@
     - import_tasks: tasks/gnome/extensions.yml
     - import_tasks: tasks/moonlander.yml
     - import_tasks: tasks/music-production/dependencies.yml
-    - import_tasks: tasks/music-production/reaper.yml
     - import_tasks: tasks/music-production/studio-setup.yml
+    - import_tasks: tasks/music-production/reaper.yml
     - import_tasks: tasks/music-production/plugins.yml
     - import_tasks: tasks/tuning.yml
     - import_tasks: tasks/cleanup.yml
