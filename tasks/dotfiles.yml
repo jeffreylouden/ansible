@@ -12,4 +12,4 @@
   tags: install,dotfiles,stow
   shell: 'cd ~/.dotfiles && ./install.sh'
   environment:
-    STOW_FOLDERS: 'alacritty,bat,bin,editorconfig,git,nvim,prettier,tmux,zsh'
+    STOW_FOLDERS: 'alacritty,bat,bin,brave,editorconfig,git,nvim,prettier,tmux,zsh'
