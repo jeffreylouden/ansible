@@ -22,18 +22,6 @@ Included tasks make detailed use of tags to target specific installation stages.
 
 There doesn't seem to be a way (at least I can find yet) to automatically configure brave via ansible or the cli, so this needs to be manually configured.
 
-### Music Production
-
-#### [Tukan Plugins](https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS)
-
-Incredible (**and free!**) plugins for [Reaper](https://www.reaper.fm/) that emulate classic studio gear. [Support his continued work on Patreon](https://www.patreon.com/tukanstudios).
-
-Follow [these instructions](https://stash.reaper.fm/v/43504/TUKANPLUGINS.png) or watch [this video](https://www.youtube.com/watch?v=BJI52lUZxJU) to install them via Reapack.
-
-#### [VCV Rack](https://vcvrack.com/)
-
-Cross-platform modular system. The pro version requires login to access, so installing via ansible won't currently work.
-
 ### Additional Applications
 
 - [Zoom](https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux) has pretty solid linux support, but isn't available in Fedora's core repostories and the Flatpak version is consistently behind. Follow the link above to install it manually.
