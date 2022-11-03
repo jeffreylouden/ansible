@@ -79,7 +79,7 @@
   shell: 'curl -L  https://dl.u-he.com/releases/Diva_145_12092_Linux.tar.xz | tar -xJ'
 - name: music production | plugins | install u-he Diva plugin
   tags: install, music, plugins
-  command: './Diva-145-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
+  command: './Diva-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
 
 - name: music production | plugins | download TAL Reverb
   tags: install, music, plugins
