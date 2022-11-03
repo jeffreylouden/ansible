@@ -1,58 +1,4 @@
 ---
-- name: music production | install | media dependencies
-  become: true
-  dnf:
-    name:
-      - xz # utility to untar u-he plugins
-      - kf5-kservice # KDE dependencies for reaper
-      - tycmd # m8 firmware tool
-      - libcurl # seemingly a dependency for Audio Assault plugins
-- name: music production | config | add libcurl-gnutls copr repo
-  tags: install,music,dependencies
-  become: true
-  community.general.copr:
-    state: enabled
-    name: patrickl/libcurl-gnutls
-- name: music production | install | libcurl-gnutls package
-  tags: install,music,dependencies
-  become: true
-  dnf:
-    name: libcurl-gnutls
-- name: music production | dependencies | start kbuildsycoca5
-  command: kbuildsycoca5
-
-- name: music production | DAW | download reaper
-  tags: install, music, reaper
-  shell: 'curl -L https://www.reaper.fm/files/6.x/reaper669_linux_x86_64.tar.xz | tar -xJ'
-- name: music production | DAW | install reaper
-  tags: install, music, reaper
-  become: true
-  shell: './reaper_linux_x86_64/install-reaper.sh --quiet --install ~/opt --integrate-user-desktop'
-
-- name: music production | install | clone studio repository
-  tags: install,music,reaper,stow
-  git:
-    repo: 'git@github.com:jeffreylouden/studio.git'
-    dest: '~/.studio'
-    recursive: true
-    update: true
-    accept_hostkey: true
-    version: main
-
-- name: music production | stow | run installation script
-  tags: install,music,reaper,stow
-  shell: 'cd ~/.studio && ./install.sh'
-
-- name: music production | reaper | install sws sws-extension
-  tags: install, music, reaper
-  shell: 'curl -L https://www.sws-extension.org/download/featured/sws-2.12.1.3-Linux-x86_64.tar.xz | tar -xJ -C ~/.config/REAPER'
-
-- name: music production | reaper | download reaPack extensions
-  tags: install, music, reaper, reapack, extensions
-  command: 'wget https://github.com/cfillion/reapack/releases/download/v1.2.4.2/reaper_reapack-x86_64.so'
-- name: music production | reaper | install reaPack extensions
-  tags: install, music, reaper, reapack, extensions
-  command: 'mv reaper_reapack-x86_64.so ~/.config/REAPER/UserPlugins'
 
 - name: music production | plugins | download u-he MFM2 plugin
   tags: install, music, plugins
@@ -93,3 +39,4 @@
   command: ' cp -r TAL-Reverb/TAL-Reverb-4.vst3 ~/.vst3'
 # https://copr.fedorainfracloud.org/coprs/patrickl/wine-tkg-testing/
 # https://copr.fedorainfracloud.org/coprs/patrickl/yabridge-stable/
+
