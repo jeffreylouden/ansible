@@ -1,0 +1,7 @@
+---
+- name: music production | DAW | bitwig studio (flatpak)
+  tags: install,flatpak,bitwig
+  community.general.flatpak:
+    name: com.bitwig.BitwigStudio
+    state: present
+    remote: flathub

@@ -3,6 +3,7 @@
   become: true
   dnf:
     name:
+      - ffmpeg # dependency for Bitwig
       - xz # utility to untar u-he plugins
       - kf5-kservice # KDE dependencies for reaper
       - tycmd # m8 firmware tool

@@ -1,0 +1,19 @@
+---
+- name: flatpak | install | flatpak core
+  tags: install,flatpak
+  become: true
+  dnf:
+    name:
+      - flatpak
+- name: flathub flatpak repo
+  tags: install,flatpak
+  become: true
+  command: 'flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo'
+- name: flatpak | install | repair flatpak installation
+  tags: install,flatpak
+  become: true
+  command: flatpak repair --user
+- name: flatpak | update | post-repair update flatpak
+  tags: install,flatpak
+  become: true
+  command: flatpak update
