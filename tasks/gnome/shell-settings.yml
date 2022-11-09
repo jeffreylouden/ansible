@@ -23,7 +23,7 @@
   tags: gnome,gnome-shell
   dconf:
     key: '/org/gnome/shell/favorite-apps'
-    value: "['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'brave-browser.desktop', 'discord.desktop', 'cockos-reaper.desktop']"
+    value: "['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'brave-browser.desktop', 'com.bitwig.BitwigStudio.desktop', 'discord.desktop']"
 
 - name: gnome | shell settings | event-sounds (disable)
   tags: gnome,audio,sounds,alerts
