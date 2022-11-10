@@ -46,6 +46,7 @@
       - jq # modern json handling
       - gh # github cli
       - lsof
+      - git-delta # better git diff
       - cronie # cron jobs
       - stow # managed symlinks
       - neofetch # system information
