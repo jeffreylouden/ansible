@@ -15,28 +15,47 @@
 
 - name: music production | plugins | download u-he Presswerk plugin
   tags: install, music, plugins
-  shell: 'curl -L  https://dl.u-he.com/releases/Presswerk_115_12092_Linux.tar.xz | tar -xJ'
+  shell: 'curl -L https://dl.u-he.com/releases/Presswerk_115_12092_Linux.tar.xz | tar -xJ'
 - name: music production | plugins | install u-he Presswerk plugin
   tags: install, music, plugins
   command: './Presswerk-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
 
 - name: music production | plugins | download u-he Twangstrom plugin
   tags: install, music, plugins
-  shell: 'curl -L  https://dl.u-he.com/releases/Twangstrom_101_12092_Linux.tar.xz | tar -xJ'
+  shell: 'curl -L https://dl.u-he.com/releases/Twangstrom_101_12092_Linux.tar.xz | tar -xJ'
 - name: music production | plugins | install u-he Twangstrom plugin
   tags: install, music, plugins
   command: './Twangstrom-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
 
 - name: music production | plugins | download u-he Colour Copy plugin
   tags: install, music, plugins
-  shell: 'curl -L  https://dl.u-he.com/releases/ColourCopy_101_12092_Linux.tar.xz | tar -xJ'
+  shell: 'curl -L https://dl.u-he.com/releases/ColourCopy_101_12092_Linux.tar.xz | tar -xJ'
 - name: music production | plugins | install u-he Colour Copy plugin
   tags: install, music, plugins
   command: './ColourCopy-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
 
 - name: music production | plugins | download u-he Diva plugin
   tags: install, music, plugins
-  shell: 'curl -L  https://dl.u-he.com/releases/Diva_145_12092_Linux.tar.xz | tar -xJ'
+  shell: 'curl -L https://dl.u-he.com/releases/Diva_145_12092_Linux.tar.xz | tar -xJ'
 - name: music production | plugins | install u-he Diva plugin
   tags: install, music, plugins
   command: './Diva-12092/install.sh --quiet' # TODO: brittle. can i somehow find the latest version?
+
+- name: music production | plugins | download u-he Zebra2 (legacy) plugin
+  tags: install, music, plugins
+  shell: 'curl -L https://dl.u-he.com/releases/Zebra_Legacy_293_12092_Linux.zip -o Zebra_Legacy_12092_Linux.zip; unzip Zebra_Legacy_12092_Linux.zip -d .'
+- name: music production | plugins | extract u-he Zebra2 Legacy plugin
+  tags: install, music, plugins
+  command: 'tar -xJ -f 01\ Zebra2/Zebra2_293_12092_Linux.tar.xz'
+- name: music production | plugins | extract u-he Zebra2 -- The Dark Zebra plugin
+  tags: install, music, plugins
+  command: 'tar -xJ -f 02\ The\ Dark\ Zebra/The\ Dark\ Zebra\ 2.9.3\ Linux\ Installer.tar.xz'
+- name: music production | plugins | extract u-he Zebra2 Legacy plugin
+  tags: install, music, plugins
+  command: './Zebra2-12092/install.sh --quiet'
+- name: music production | plugins | extract u-he Zebra2 -- The Dark Zebra plugin
+  tags: install, music, plugins
+  command: './ZebraHZ-12092/install.sh --quiet'
+
+
+
