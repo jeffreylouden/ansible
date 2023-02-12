@@ -56,5 +56,3 @@
       - discord # chat application
       - vlc # always good to have a media player and codecs
       - shfmt # shell formatter for nvim null-ls package
-      - remmina # Remote Desktop server for connecting to local Raspberry Pi 4
-      - remmina-plugins-vnc # VNC plugin for above
