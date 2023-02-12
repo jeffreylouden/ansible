@@ -46,10 +46,16 @@
     key: '/org/gnome/shell/extensions/just-perfection/startup-status'
     value: '0'
 
-- name: gnome | extensions | just-perfection | move notifications to top right
+- name: gnome | extensions | just-perfection | move notifications to top left
   tags: gnome,extensions
   dconf:
     key: '/org/gnome/shell/extensions/just-perfection/notification-banner-position'
+    value: '0'
+
+- name: gnome | extensions | just-perfection | move clock to top left
+  tags: gnome,extensions
+  dconf:
+    key: '/org/gnome/shell/extensions/just-perfection/clock-menu-position'
     value: '2'
 
 - name: gnome | extensions | just-perfection | hide show applications button in panel
@@ -69,3 +75,15 @@
   dconf:
     key: '/org/gnome/shell/extensions/just-perfection/power-icon'
     value: 'false'
+
+- name: gnome | extensions | blur-my-shell | set brightness to full
+  tags: gnome,extensions
+  dconf:
+    key: '/org/gnome/shell/extensions/blur-my-shell/brightness'
+    value: '1.0'
+
+- name: gnome | extensions | blur-my-shell | set signma to zero
+  tags: gnome,extensions
+  dconf:
+    key: '/org/gnome/shell/extensions/blur-my-shell/signma'
+    value: '0'
