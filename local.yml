@@ -10,23 +10,21 @@
   tasks:
     - import_tasks: tasks/hosts.yml
     - import_tasks: tasks/ssh.yml
-    - import_tasks: tasks/core-setup.yml
-      when: ansible_distribution in ["Fedora"]
-    - import_tasks: tasks/core-packages.yml
-      when: ansible_distribution in ["Fedora"]
+    #- import_tasks: tasks/core-setup.yml
+    #  when: ansible_distribution in ["Fedora"]
+    #- import_tasks: tasks/core-packages.yml
+    #  when: ansible_distribution in ["Fedora"]
     - import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/node-setup.yml
     - import_tasks: tasks/npm-packages.yml
     - import_tasks: tasks/rust-setup.yml
     - import_tasks: tasks/terraform-setup.yml
     - import_tasks: tasks/docker-setup.yml
-    - import_tasks: tasks/lazydocker.yml
-    - import_tasks: tasks/lazygit.yml
+    #- import_tasks: tasks/lazydocker.yml
+    #- import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/zsh-setup.yml
     - import_tasks: tasks/dotfiles.yml
-    - import_tasks: tasks/brave.yml
-    - import_tasks: tasks/lazygit.yml
-    - import_tasks: tasks/lazydocker.yml
+    #- import_tasks: tasks/brave.yml
     - import_tasks: tasks/bottom.yml
     - import_tasks: tasks/software-development.yml
     - import_tasks: tasks/nvim-setup.yml
