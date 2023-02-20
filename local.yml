@@ -4,10 +4,7 @@
     source_key: '{{ playbook_dir }}/files/ssh/id_rsa'
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
     terminal_emulator: 'alacritty'
-  pre_tasks:
-    - import_tasks: tasks/apt-configuration.yml
-      when: ansible_distribution in ["Fedora"]
-  tasks:
+   tasks:
     - import_tasks: tasks/hosts.yml
     - import_tasks: tasks/ssh.yml
     #- import_tasks: tasks/core-setup.yml
