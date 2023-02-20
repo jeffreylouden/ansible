@@ -21,7 +21,7 @@
     #- import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/zsh-setup.yml
     - import_tasks: tasks/dotfiles.yml
-    - import_tasks: tasks/git-delta.yml
+    # - import_tasks: tasks/git-delta.yml
     #- import_tasks: tasks/brave.yml
     #- import_tasks: tasks/bottom.yml
     - import_tasks: tasks/software-development.yml
