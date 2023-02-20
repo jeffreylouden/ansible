@@ -6,6 +6,6 @@
 - name: flatpak | install | install packages
   community.general.flatpak:
     name:
-      - com.bitwig.BitwigStudio
-      - com.discordapp.Discord
+      - "com.bitwig.BitwigStudio"
+      - "com.discordapp.Discord"
 
