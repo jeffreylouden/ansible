@@ -1,0 +1,3 @@
+- name: git delta | install | download release
+  become: true
+  command: cargo install git-delta

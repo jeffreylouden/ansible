@@ -51,9 +51,15 @@
       - shfmt # shell formatter for nvim null-ls package
       - pip # python dependencies
       - cmake
-- name: core packages | configure | extra setup for bat
+- name: core packages | configure | extra setup for bat | create local bin folder
   become: true
-  command: mkdir -p ~/.local/bin && ln -s /usr/bin/batcat ~/.local/bin/bat
+  file:
+    dest: '~/.local/bin'
+    mode: 0700
+    state: directory
+- name: core packages | configure | extra setup for bat | symlink bat executable
+  become: true
+  command: ln -s /usr/bin/batcat ~/.local/bin/bat
 - name: core packages | install | python dependencies
   tags: install,python
   become: true
