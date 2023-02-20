@@ -59,7 +59,11 @@
     state: directory
 - name: core packages | configure | extra setup for bat | symlink bat executable
   become: true
-  command: ln -s /usr/bin/batcat ~/.local/bin/bat
+  ansible.builtin.file:
+  src: /usr/bin/batcat
+  dest: ~/.local/bin/bat
+  state: link
+  force: true
 - name: core packages | install | python dependencies
   tags: install,python
   become: true
