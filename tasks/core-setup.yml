@@ -2,13 +2,6 @@
 - name: core | apt | update cache
   become: true
   apt:
+    upgrade: "full"
     update_cache: true
-- name: core | apt | upgrade all packages
-  become: true
-  apt:
-    name: '*'
-    state: latest
-- name: core | apt | groupupdate core packages
-  become: true
-  # ansible builtin command not available
-  command: apt groupupdate core -y
+

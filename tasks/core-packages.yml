@@ -51,6 +51,12 @@
       - shfmt # shell formatter for nvim null-ls package
       - pip # python dependencies
       - cmake
+      - gnome-tweaks
+      - dconf-editor
+      - thefuck
+      - neovim
+      - python3-neovim
+      - snapd
 - name: core packages | configure | extra setup for bat | create local bin folder
   become: true
   file:

@@ -7,10 +7,8 @@
   tasks:
     - import_tasks: tasks/hosts.yml
     - import_tasks: tasks/ssh.yml
-    #- import_tasks: tasks/core-setup.yml
-    #  when: ansible_distribution in ["Fedora"]
+    - import_tasks: tasks/core-setup.yml
     - import_tasks: tasks/core-packages.yml
-    #  when: ansible_distribution in ["Fedora"]
     #- import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/node-setup.yml
     - import_tasks: tasks/npm-packages.yml
@@ -27,16 +25,15 @@
     - import_tasks: tasks/software-development.yml
     - import_tasks: tasks/nvim-setup.yml
     - import_tasks: tasks/fonts.yml
-    - import_tasks: tasks/gnome/appearance.yml
-    - import_tasks: tasks/gnome/peripherals.yml
-    - import_tasks: tasks/gnome/shell-settings.yml
-    - import_tasks: tasks/gnome/packages.yml
-    - import_tasks: tasks/gnome/extensions.yml
-    - import_tasks: tasks/moonlander.yml
+    # - import_tasks: tasks/gnome/appearance.yml
+    # - import_tasks: tasks/gnome/peripherals.yml
+    # - import_tasks: tasks/gnome/shell-settings.yml
+    # - import_tasks: tasks/gnome/packages.yml
+    # - import_tasks: tasks/gnome/extensions.yml
+    # - import_tasks: tasks/moonlander.yml
     - import_tasks: tasks/music-production/dependencies.yml
     - import_tasks: tasks/music-production/studio-setup.yml
     - import_tasks: tasks/music-production/bitwig.yml
     - import_tasks: tasks/music-production/plugins.yml
     - import_tasks: tasks/tuning.yml
     - import_tasks: tasks/cleanup.yml
-      when: ansible_distribution in ["Fedora"]
