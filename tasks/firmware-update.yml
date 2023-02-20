@@ -2,5 +2,5 @@
 - name: firmware | install | firmware update manager
   tags: install,firmware
   become: true
-  dnf:
+  apt:
     name: fwupd

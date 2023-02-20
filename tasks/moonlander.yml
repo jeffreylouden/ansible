@@ -1,7 +1,7 @@
 ---
 - name: moonlander | install | development dependencies
   become: true
-  dnf:
+  apt:
     name:
       - gtk3
       - webkit2gtk3
@@ -11,7 +11,7 @@
   become: true
   shell: 'usermod -aG plugdev $USER'
 # # https://github.com/zsa/wally/wiki/Linux-install
-# sudo dnf install gtk3 webkit2gtk3 libusb
+# sudo apt install gtk3 webkit2gtk3 libusb
 # sudo groupadd plugdev
 # sudo usermod -aG plugdev "$USER"
 #

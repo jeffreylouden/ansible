@@ -1,14 +1,14 @@
 ---
-- name: core | dnf | update cache
+- name: core | apt | update cache
   become: true
-  dnf:
+  apt:
     update_cache: true
-- name: core | dnf | upgrade all packages
+- name: core | apt | upgrade all packages
   become: true
-  dnf:
+  apt:
     name: '*'
     state: latest
-- name: core | dnf | groupupdate core packages
+- name: core | apt | groupupdate core packages
   become: true
   # ansible builtin command not available
-  command: dnf groupupdate core -y
+  command: apt groupupdate core -y

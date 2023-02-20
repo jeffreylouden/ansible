@@ -1,7 +1,7 @@
 ---
 - name: music production | install | media dependencies
   become: true
-  dnf:
+  apt:
     name:
       - ffmpeg # dependency for Bitwig
       - xz # utility to untar u-he plugins

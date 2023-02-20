@@ -1,13 +1,12 @@
 ---
-- name: bottom | install | add copr repo
+- name: bottom | install | snap application install
   tags: install,bottom
   become: true
-  community.general.copr:
-    state: enabled
-    name: atim/bottom
-- name: bottom | install | dnf package
+  community.general.snap:
+    name:
+      - bottom
+- name: bottom | configuration | provide correct snap access
   tags: install,bottom
   become: true
-  dnf:
-    name: bottom
+  command: sudo snap connect bottom:mount-observe && sudo snap connect bottom:hardware-observe && sudo snap connect bottom:system-observe &&  sudo snap connect bottom:process-control
 

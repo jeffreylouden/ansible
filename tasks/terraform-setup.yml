@@ -1,10 +1,8 @@
 ---
-- name: terraform | install | add repo configuration
+- name: terraform | install | apt packages
   tags: install,terraform
   become: true
-  command: 'dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo'
-- name: terraform | install | dnf packages
-  tags: install,terraform
-  become: true
-  dnf:
-    name: terraform
+  apt:
+    name:
+      - gnupg
+      - software-properties-common

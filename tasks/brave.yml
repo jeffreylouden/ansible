@@ -2,15 +2,15 @@
 - name: brave | config | add brave repo
   tags: install,brave
   become: true
-  command: 'dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/'
+  command: 'apt config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/'
 - name: brave | config | import rpm
   tags: install,brave
   become: true
   command: 'rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc'
-- name: brave | install | dnf package
+- name: brave | install | apt package
   tags: install,brave
   become: true
-  dnf:
+  apt:
     name: brave-browser
 - name: brave | extensions | create extensions directory
   tags: install,brave,extensions

@@ -2,11 +2,11 @@
 - name: docker | install | add repo configuration
   tags: install,docker
   become: true
-  command: 'dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo'
-- name: docker | install | dnf packages
+  command: 'apt config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo'
+- name: docker | install | apt packages
   tags: install,docker
   become: true
-  dnf:
+  apt:
     name:
       - docker-ce
       - docker-ce-cli

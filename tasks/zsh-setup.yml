@@ -1,8 +1,8 @@
 ---
-- name: zsh | install | zsh dnf package
+- name: zsh | install | zsh apt package
   tags: install,productivity,dotfiles,zsh
   become: true
-  dnf:
+  apt:
     name: zsh
 - name: zsh | config | change shell to zsh
   tags: install,productivity,dotfiles,zsh

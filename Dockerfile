@@ -2,11 +2,11 @@
 
 FROM fedora:36 AS base
 WORKDIR /usr/local/bin
-RUN dnf update -y && \
-    dnf upgrade -y && \
-    dnf install -y ansible git curl && \
-    dnf autoremove -y && \
-    dnf clean all
+RUN apt update -y && \
+    apt upgrade -y && \
+    apt install -y ansible git curl && \
+    apt autoremove -y && \
+    apt clean all
 
 FROM base AS local
 ARG TAGS

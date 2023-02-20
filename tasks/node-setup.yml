@@ -2,7 +2,7 @@
 - name: node | install | nodejs and npm
   tags: install,node
   become: true
-  dnf:
+  apt:
     name:
       - 'nodejs'
       - 'npm'

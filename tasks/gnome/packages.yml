@@ -1,7 +1,7 @@
 - name: gnome | packages | install
   tags: install,gnome,gui
   become: true
-  dnf:
+  apt:
     name:
       - gnome-tweaks # improve stock gnome experience
       - chrome-gnome-shell # gnome extensions chrome integration

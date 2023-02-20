@@ -5,8 +5,8 @@
   community.general.copr:
     state: enabled
     name: atim/lazygit
-- name: lazygit | install | dnf package
+- name: lazygit | install | apt package
   tags: install,git,lazygit
   become: true
-  dnf:
+  apt:
     name: lazygit

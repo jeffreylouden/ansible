@@ -5,7 +5,7 @@
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
     terminal_emulator: 'alacritty'
   pre_tasks:
-    - import_tasks: tasks/dnf-configuration.yml
+    - import_tasks: tasks/apt-configuration.yml
       when: ansible_distribution in ["Fedora"]
   tasks:
     - import_tasks: tasks/hosts.yml
