@@ -59,7 +59,7 @@
     state: directory
 - name: core packages | configure | extra setup for bat | symlink bat executable
   become: true
-  builtin.file:
+  file:
     src: /usr/bin/batcat
     dest: ~/.local/bin/bat
     state: link
