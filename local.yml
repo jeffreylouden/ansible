@@ -11,7 +11,7 @@
     #  when: ansible_distribution in ["Fedora"]
     - import_tasks: tasks/core-packages.yml
     #  when: ansible_distribution in ["Fedora"]
-    - import_tasks: tasks/flatpak.yml
+    #- import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/node-setup.yml
     - import_tasks: tasks/npm-packages.yml
     #- import_tasks: tasks/rust-setup.yml
