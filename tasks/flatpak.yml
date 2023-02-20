@@ -3,3 +3,9 @@
   tags: install,flatpak
   become: true
   command: flatpak update
+- name: flatpak | install | install packages
+  become: true
+  community.general.flatpak:
+    name:
+      - 'com.bitwig.BitwigStudio'
+

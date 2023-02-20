@@ -53,6 +53,4 @@
       - ncdu # disk usage management utility
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
-      - discord # chat application
-      - vlc # always good to have a media player and codecs
       - shfmt # shell formatter for nvim null-ls package
