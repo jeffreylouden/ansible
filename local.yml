@@ -3,7 +3,8 @@
   vars:
     source_key: '{{ playbook_dir }}/files/ssh/id_rsa'
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
-   tasks:
+    terminal_emulator: 'alacritty'
+  tasks:
     - import_tasks: tasks/hosts.yml
     - import_tasks: tasks/ssh.yml
     #- import_tasks: tasks/core-setup.yml
