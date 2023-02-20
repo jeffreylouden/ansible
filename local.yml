@@ -14,9 +14,9 @@
     - import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/node-setup.yml
     - import_tasks: tasks/npm-packages.yml
-    - import_tasks: tasks/rust-setup.yml
+    #- import_tasks: tasks/rust-setup.yml
     - import_tasks: tasks/terraform-setup.yml
-    - import_tasks: tasks/docker-setup.yml
+    #- import_tasks: tasks/docker-setup.yml
     #- import_tasks: tasks/lazydocker.yml
     #- import_tasks: tasks/lazygit.yml
     - import_tasks: tasks/zsh-setup.yml
