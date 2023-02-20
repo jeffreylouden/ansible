@@ -26,10 +26,7 @@
 #   become: true
 #   apt:
 #     name: '@C Development Tools and Libraries'
-# - name: core packages | install | python dependencies
-#   tags: install,python
-#   become: true
-#   command: pip install psutil --no-input --quiet
+
 - name: core packages | install | essential user packages
   tags: install,terminal
   become: true
@@ -52,3 +49,12 @@
       - wireshark # network monitoring utility
       - bleachbit # system cleaning utility
       - shfmt # shell formatter for nvim null-ls package
+      - pip # python dependencies
+      - cmake
+- name: core packages | configure | extra setup for bat
+  become: true
+  command: mkdir -p ~/.local/bin && ln -s /usr/bin/batcat ~/.local/bin/bat
+- name: core packages | install | python dependencies
+  tags: install,python
+  become: true
+  command: pip install psutil --no-input --quiet
