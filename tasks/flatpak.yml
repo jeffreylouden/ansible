@@ -7,5 +7,5 @@
   become: true
   community.general.flatpak:
     name:
-      - 'com.bitwig.BitwigStudio'
+      - com.bitwig.BitwigStudio
 
