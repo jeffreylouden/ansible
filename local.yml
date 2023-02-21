@@ -9,7 +9,7 @@
     - import_tasks: tasks/ssh.yml
     - import_tasks: tasks/core-setup.yml
     - import_tasks: tasks/core-packages.yml
-    #- import_tasks: tasks/flatpak.yml
+    - import_tasks: tasks/flatpak.yml
     - import_tasks: tasks/node-setup.yml
     - import_tasks: tasks/npm-packages.yml
     #- import_tasks: tasks/rust-setup.yml
