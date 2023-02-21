@@ -5,4 +5,4 @@
     name:
       - ffmpeg # dependency for Bitwig
       - xz-utils # utility to untar u-he plugins
-      - tycmd # m8 firmware tool
+      # - tycmd # m8 firmware tool
