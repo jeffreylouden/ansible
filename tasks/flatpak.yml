@@ -3,6 +3,12 @@
   tags: install,flatpak
   become: true
   command: flatpak update
+- name: Add flathub repo
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
 - name: flatpak | install | install packages
   community.general.flatpak:
     name:
