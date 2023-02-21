@@ -57,6 +57,7 @@
       - neovim
       - python3-neovim
       - snapd
+      - uidmap
 - name: core packages | configure | extra setup for bat | create local bin folder
   become: true
   file:

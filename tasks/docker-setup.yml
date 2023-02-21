@@ -8,6 +8,9 @@
   become: true
   apt:
     name:
+      - ca-certificates
+      - gnupg
+      - lsb-release
       - docker-ce
       - docker-ce-cli
       - containerd.io

@@ -10,4 +10,3 @@
   npm:
     name: neovim
     global: true
-

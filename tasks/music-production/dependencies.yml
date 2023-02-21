@@ -4,5 +4,5 @@
   apt:
     name:
       - ffmpeg # dependency for Bitwig
-      - xz # utility to untar u-he plugins
+      - xz-utils # utility to untar u-he plugins
       - tycmd # m8 firmware tool
