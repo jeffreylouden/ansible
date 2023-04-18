@@ -1,8 +1,0 @@
----
-- name: music production | install | media dependencies
-  become: true
-  dnf:
-    name:
-      - ffmpeg # dependency for Bitwig
-      - xz # utility to untar u-he plugins
-      - tycmd # m8 firmware tool
