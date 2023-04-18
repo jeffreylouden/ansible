@@ -29,7 +29,7 @@
     - import_tasks: tasks/software-development.yml
     - import_tasks: tasks/nvim-setup.yml
     - import_tasks: tasks/fonts.yml
-    - import_tasks: tasks/gnome/appearance.yml
+    #- import_tasks: tasks/gnome/appearance.yml
     - import_tasks: tasks/gnome/peripherals.yml
     - import_tasks: tasks/gnome/shell-settings.yml
     - import_tasks: tasks/gnome/packages.yml
