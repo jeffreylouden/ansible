@@ -1,70 +1,18 @@
 - name: gnome | peripherals | enable natural scrolling (mouse)
   tags: gnome,mouse,peripherals
-  dconf:
-    key: '/org/gnome/desktop/peripherals/mouse/natural-scroll'
-    value: 'true'
-- name: gnome | peripherals | enable cursor acceleration (mouse)
-  tags: gnome,mouse,peripherals
-  dconf:
-    key: '/org/gnome/desktop/peripherals/mouse/accel-profile'
-    value: "'adaptive'"
-- name: gnome | peripherals | increase cursor speed (mouse)
-  tags: gnome,mouse,peripherals
-  dconf:
-    key: '/org/gnome/desktop/peripherals/mouse/speed'
-    value: '0.75'
-- name: gnome | peripherals | increase cursor speed (touchpad)
-  tags: gnome,mouse,peripherals
-  dconf:
-    key: '/org/gnome/desktop/peripherals/touchpad/speed'
-    value: '0.75'
-- name: gnome | peripherals | remap capslock as control
-  tags: gnome,keyboard,peripherals
-  dconf:
-    key: '/org/gnome/desktop/input-sources/xkb-options'
-    value: "['caps:ctrl_modifier']"
-- name: gnome | peripherals | set manual night-light schedule
-  tags: gnome,peripherals,night-light
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic'
-    value: 'false'
-- name: gnome | peripherals | set manual night-light schedule start time
-  tags: gnome,peripherals,night-light
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/color/night-light-schedule-from'
-    value: '22.0'
-- name: gnome | peripherals | set manual night-light schedule stop time
-  tags: gnome,peripherals,night-light
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/color/night-light-schedule-to'
-    value: '7.0'
-- name: gnome | peripherals | enable night-light
-  tags: gnome,peripherals,night-light
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled'
-    value: 'true'
-- name: gnome | peripherals | set power button behavior
-  tags: gnome,peripherals,power
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/power/power-button-action'
-    value: "'suspend'"
-- name: gnome | peripherals | enable automatic suspend while plugged in to ac
-  tags: gnome,peripherals,power
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type'
-    value: "'suspend'"
-- name: gnome | peripherals | set timeout for automatic suspend while plugged in to ac
-  tags: gnome,peripherals,power
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout'
-    value: '2700'
-- name: gnome | peripherals | enable automatic suspend while on battery
-  tags: gnome,peripherals,power
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type'
-    value: "'suspend'"
-- name: gnome | peripherals | set timeout for automatic suspend while on battery
-  tags: gnome,peripherals,power
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout'
-    value: '1500'
+  gsetting:
+    settings:
+      org.gnome.desktop.peripherals.mouse.natural-scroll: 'true'
+      org.gnome.desktop.peripherals.mouse.accel-profile: "'adaptive'"
+      org.gnome.desktop.peripherals.mouse.speed: '0.75'
+      org.gnome.desktop.peripherals.touchpad.speed: '0.75'
+      org.gnome.desktop.input-sources.xkb-options: "['caps:ctrl_modifier']"
+      org.gnome.settings-daemon.plugins.color.night-light-schedule-automatic: 'false'
+      org.gnome.settings-daemon.plugins.color.night-light-schedule-from: '22.0'
+      org.gnome.settings-daemon.plugins.color.night-light-schedule-to: '7.0'
+      org.gnome.settings-daemon.plugins.color.night-light-enabled: 'true'
+      org.gnome.settings-daemon.plugins.power.power-button-action: "'suspend'"
+      org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-type: "'suspend'"
+      org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-timeout: '2700'
+      org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-type: "'suspend'"
+      org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-timeout: '1500'
