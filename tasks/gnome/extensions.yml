@@ -1,71 +1,16 @@
 - name: gnome | extensions | enable
   tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/enabled-extensions'
-    value: "['auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection']"
-
-- name: gnome | extensions | auto-move windows
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/auto-move-windows/application-list'
-    value: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3', 'com.bitwig.BitwigStudio.desktop:4']"
-
-- name: gnome | extensions | just-perfection | hide activities button
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/activities-button'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | hide application menu
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/app-menu'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | hide weather in clock view
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/weather'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | hide events in clock view
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/events-button'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | hide world clock in clock view
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/world-clock'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | go to desktop on startup
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/startup-status'
-    value: '0'
-
-- name: gnome | extensions | just-perfection | move notifications to top right
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/notification-banner-position'
-    value: '2'
-
-- name: gnome | extensions | just-perfection | hide show applications button in panel
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/show-apps-button'
-    value: 'false'
-
-- name: gnome | extensions | just-perfection | enable theme
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/theme'
-    value: 'true'
-
-- name: gnome | extensions | just-perfection | hide power icon
-  tags: gnome,extensions
-  dconf:
-    key: '/org/gnome/shell/extensions/just-perfection/power-icon'
-    value: 'false'
+  gsetting:
+    settings:
+      org.gnome.shell.enabled-extensions: "['auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection']"
+      org.gnome.shell.extensions.auto-move-windows.application-list: "['brave-browser.desktop:1', 'Alacritty.desktop:2', 'discord.desktop:3']"
+      org.gnome.shell.extensions.just-perfection.activities-button: 'false'
+      org.gnome.shell.extensions.just-perfection.app-menu: 'false'
+      org.gnome.shell.extensions.just-perfection.weather: 'false'
+      org.gnome.shell.extensions.just-perfection.events-button: 'false'
+      org.gnome.shell.extensions.just-perfection.world-clock: 'false'
+      org.gnome.shell.extensions.just-perfection.startup-status: '0'
+      org.gnome.shell.extensions.just-perfection.notification-banner-position: '2'
+      org.gnome.shell.extensions.just-perfection.show-apps-button: 'false'
+      org.gnome.shell.extensions.just-perfection.theme: 'true'
+      org.gnome.shell.extensions.just-perfection.power-icon: 'false'

@@ -1,101 +1,20 @@
 # Enable Dark Mode
 - name: gnome | shell settings | enable dark mode
   tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/interface/color-scheme'
-    value: "'prefer-dark'"
-
-# Disable hot corners
-- name: gnome | shell settings | enable-hot-corners
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/interface/enable-hot-corners'
-    value: 'false'
-
-# Set clock to 12-hour format
-- name: gnome | shell settings | clock format
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/interface/clock-format'
-    value: "'12h'"
-
-- name: gnome | shell settings | customize dash panel
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/shell/favorite-apps'
-    value: "['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'brave-browser.desktop', 'com.bitwig.BitwigStudio.desktop', 'discord.desktop']"
-
-- name: gnome | shell settings | event-sounds (disable)
-  tags: gnome,audio,sounds,alerts
-  dconf:
-    key: '/org/gnome/desktop/sound/event-sounds'
-    value: 'false'
-
-- name: gnome | shell settings | allow over-amplification
-  tags: gnome,audio,sounds
-  dconf:
-    key: '/org/gnome/desktop/sound/allow-volume-above-100-percent'
-    value: 'true'
-
-# Disable screen blanking
-- name: gnome | shell settings | idle-delay
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/session/idle-delay'
-    value: 'uint32 0'
-
-# Disable input sounds
-- name: gnome | shell settings | input-feedback-sounds (disable input sounds)
-  tags: gnome,audio,sounds,alerts
-  dconf:
-    key: '/org/gnome/desktop/sound/input-feedback-sounds'
-    value: 'false'
-
-- name: gnome | shell settings | old-files-age
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/privacy/old-files-age'
-    value: 'uint32 14'
-
-- name: gnome | shell settings | remove-old-temp-files
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/privacy/remove-old-temp-files'
-    value: 'true'
-
-- name: gnome | shell settings | remove-old-trash-files
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/privacy/remove-old-trash-files'
-    value: 'true'
-
-- name: gnome | shell settings | show-battery-percentage
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/desktop/interface/show-battery-percentage'
-    value: 'true'
-
-# Disable lock screen notifications
-- name: gnome | shell settings | show-in-lock-screen
-  tags: gnome,gnome-lockscreen
-  dconf:
-    key: '/org/gnome/desktop/notifications/show-in-lock-screen'
-    value: 'false'
-
-- name: gnome | shell settings | workspaces-only-on-primary
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/shell/overrides/workspaces-only-on-primary'
-    value: 'true'
-
-- name: gnome | shell settings | set gnome-screenshot default save directory
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gnome/gnome-screenshot/auto-save-directory'
-    value: "'/home/jeffreylouden'"
-
-- name: gnome | shell settings | show hidden files
-  tags: gnome,gnome-shell
-  dconf:
-    key: '/org/gtk/settings/file-chooser/show-hidden'
-    value: 'true'
+  gsetting:
+    settings:
+      org.gnome.desktop.interface.color-scheme: "'prefer-dark'"
+      org.gnome.desktop.interface.enable-hot-corners: 'false'
+      org.gnome.desktop.interface.clock-format: "'12h'"
+      org.gnome.shell.favorite-apps: "['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'brave-browser.desktop', 'discord.desktop']"
+      org.gnome.desktop.sound.event-sounds: 'false'
+      org.gnome.desktop.sound.allow-volume-above-100-percent: 'true'
+      org.gnome.desktop.session.idle-delay: 'uint32 0'
+      org.gnome.desktop.sound.input-feedback-sounds: 'false'
+      org.gnome.desktop.privacy.old-files-age: 'uint32 14'
+      org.gnome.desktop.privacy.remove-old-temp-files: 'true'
+      org.gnome.desktop.privacy.remove-old-trash-files: 'true'
+      org.gnome.desktop.interface.show-battery-percentage: 'true'
+      org.gnome.desktop.notifications.show-in-lock-screen: 'false'
+      org.gnome.shell.overrides.workspaces-only-on-primary: 'true'
+      # org.gtk.settings.file-chooser.show-hidden: 'true'
